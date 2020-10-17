@@ -4,9 +4,9 @@
 
 }
 #banner{
-    background-image: url(/bilder/pexels-josh-sorenson-976866.jpg);
+    background: url(/bilder/pexels-josh-sorenson-976866.jpg) fixed;
     background-size: cover;
-    height: 612px;
+    height: 70vh;
     background-position-y: -300px ;
     background-repeat: no-repeat;
 }
