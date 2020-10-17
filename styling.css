@@ -9,14 +9,20 @@
     height: 612px;
     background-position-y: -300px ;
     background-repeat: no-repeat;
-    
 }
 
 #logo{
+    
+}
+
+#logo-container{
+    display: flex;
+    justify-content: center;
     position: relative;
-    top: 70px; 
-    margin: 30px;
-    height: 150px;
+    top: 100px;
+    left: -80px;
+    height: 140px;
+    width: 140px;
     border: 10px solid #7681B3;
     background-color: white;
     border-radius: 50%;
@@ -29,12 +35,12 @@
     align-items: center;
     height: 97px;
 }
-#main-header-navbar{
+.main-header-navbar{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 1423px;
 }
-#main-header-navbar button{
+.main-header-navbar button{
     color: white;
     margin-left: 60px;
     font-size: 20px;
@@ -45,9 +51,20 @@
     position: relative;
     left: -100px;
 }
+.main-header-navbar-left-buttons button:hover{
+    background-color: #7681B3;
+    transition: 0.3s;
+
+    
+}
 .main-header-navbar-left-buttons button{
     background-color: transparent;
-    border: none;
+    border-style: none;
+    border-radius: 50px;
+    width: 115.07px;
+    height: 47px;
+    transition: 0.3s;
+
 
 }
 .main-header-navbar-right-buttons button{
@@ -73,13 +90,12 @@
 
 #banner-body-content h1{
     font-style: normal;
-    font-weight: normal;
+    font-weight: 700;
     font-size: 48px;
     line-height: 55px;
     margin-bottom: 26px;
 }
 #banner-body-content p{
-    font-family: Asap;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -95,8 +111,49 @@
     background: #7681B3;
     border-style: none;
     border-radius: 309px;
-
     font-size: 20px;
     line-height: 23px;
     
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 100px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.card-container div{
+    width: 700px;
+    height: 335px;
+}
+
+#card0{
+    background-size: cover;
+    background-image: url("/bilder/pexels-andrea-piacquadio-3760089.jpg");
+}
+
+#card1{
+    background-size: cover;
+    background-image: url("/bilder/pexels-andrea-piacquadio-3862089.jpg");
+}
+
+#card2{
+    background-size: cover;
+    background-image: url("/bilder/pexels-fauxels-3183150.jpg");
+}
+
+#card3{
+    background-size: cover;
+    background-image: url("/bilder/pexels-fauxels-3184180.jpg");
+}
+
+#card4{
+    background-size: cover;
+    background-image: url("/bilder/pexels-josh-sorenson-976866.jpg");
+}
+
+#card5{
+    background-size: cover;
+    background-image: url("/bilder/pexels-lucas-allmann-442540.jpg");
 }
