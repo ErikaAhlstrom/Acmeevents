@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#banner{
+    background-image: url(/bilder/pexels-josh-sorenson-976866.jpg);
+    background-size: cover;
+    height: 612px;
+    background-position-y: -300px ;
+    background-repeat: no-repeat;
+    
+}
+
+#main-header{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    height: 97px;
+}
+#main-header-navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 1123px;
+}
+#main-header-navbar button{
+    color: white;
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.main-header-navbar-left-buttons{
+    display: flex; 
+}
+.main-header-navbar-left-buttons button{
+    background-color: transparent;
+    border: none;
+
+}
+.main-header-navbar-right-buttons button{
+    background-color: #7681B3;
+    border-style: none;
+    border-radius: 50px;
+    width: 115.07px;
+    height: 47px;
+}
+#banner-body{
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 515px;
+}
+#banner-body-content{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 433px;
+}
+
+#banner-body-content h1{
+    font-family: Asap;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 55px;
+    margin-bottom: 26px;
+}
+#banner-body-content p{
+    font-family: Asap;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#banner-body-content button{
+    color: white;
+    width: 249.85px;
+    height: 58px;
+    background: #7681B3;
+    border-style: none;
+    border-radius: 309px;
+
+    font-size: 20px;
+    line-height: 23px;
+    
+}
