@@ -3,9 +3,12 @@
     padding: 0;
 }
 #banner{
-    background-image: url(/bilder/istockphoto-974238866-612x612.jpg);
+    background-image: url(/bilder/pexels-josh-sorenson-976866.jpg);
     background-size: cover;
     height: 612px;
+    background-position-y: -300px ;
+    background-repeat: no-repeat;
+    
 }
 
 #main-header{
