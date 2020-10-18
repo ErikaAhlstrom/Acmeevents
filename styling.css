@@ -2,10 +2,11 @@
     font-family: 'Asap', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 
 }
 #banner{
-    background: url(/Acmeevents/bilder/pexels-josh-sorenson-976866.jpg) fixed;
+    background: url(/Acmeevents/bilder/New/Hero.jpg) fixed;
     background-size: cover;
     height: 70vh;
     background-position-y: -300px ;
@@ -121,34 +122,181 @@
     height: 100vh;    
     top: 0; 
     position: sticky; 
-}
-*/
+}*/
+
 #card0{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/pexels-andrea-piacquadio-3760089.jpg");
+    background-image: url("/Acmeevents/bilder/New/Card1.jpg");
 }
 
 #card1{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/pexels-andrea-piacquadio-3862089.jpg");
+    background-image: url("/Acmeevents/bilder/New/Card2.jpg");
 }
 
 #card2{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/pexels-fauxels-3183150.jpg");
+    background-image: url("/Acmeevents/bilder/New/Card3.jpg");
 }
 
 #card3{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/pexels-fauxels-3184180.jpg");
+    background-image: url("/Acmeevents/bilder/New/Card4.jpg");
 }
 
 #card4{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/pexels-josh-sorenson-976866.jpg");
+    background-image: url("/Acmeevents/bilder/New/Card5.jpg");
 }
 
 #card5{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/pexels-lucas-allmann-442540.jpg");
+    background-image: url("/Acmeevents/bilder/New/Card6.jpg");
+}
+
+.contact-section{
+    margin: 200px auto;
+    width: 80%;
+    color: rgb(70, 70, 70);
+    display: flex;
+    background-color:  #D9F0FF;
+    height: 40vh;
+}
+.contact-section-container{
+    width: 80%;
+    color: rgb(70, 70, 70);
+    display: flex;
+    background-color:  #D9F0FF;
+    height: 40vh;
+}
+
+.contact-section div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.contact-section-right-input{
+    width: 260px;
+}
+.contact-section-right-input2{
+    width: 530px;
+}
+#contact-section-right-inputemail{
+    float: right;
+}
+
+.contact-section-left{
+    flex-flow: column;
+}
+
+.contact-section-left h1{
+    font-size: 3em;
+}
+.contact-section-right td input{
+    border-radius: 5px;
+    font-size: 1.4em;
+    height: 40px;
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px; 
+}
+.contact-section-right td textarea{
+    border-radius: 5px;
+    font-size: 1.4em;
+    resize: none;
+    border: none;
+    height: 84px;
+    padding: 10px; 
+}
+
+.contact-section-button{
+    border-radius: 20px;
+    color: white;
+    margin-top: 10px;
+    height: 44px;
+    width: 122px;
+    background-color: #7681B3;
+    border-style: none;
+    float: right;
+}
+
+footer{
+    display: flex;
+    flex-flow: column;
+    height: 60vh;
+    background-color:  #D9F0FF;
+}
+.main-footer{
+    width: 100%;
+    height: 80%;
+    color: rgb(70, 70, 70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-footer div{
+    display: flex; 
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 33%;
+}
+
+.main-footer h2{
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main-footer p{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main-footer input{
+    margin-bottom: 20px;
+    width: 420px; 
+    height: 40px;
+    padding: 10px;
+    font-size: 1.4em;
+
+}
+
+#main-footer-2 button{
+    font-size: 1.4em;
+    border-radius: 20px;
+    color: white;
+    height: 44px;
+    width: 122px;
+    background-color: #7681B3;
+    border-style: none;
+}
+#main-footer-3{
+}
+
+.icons{
+    display: flex; 
+    justify-content: center;
+    font-size: 60px;
+}
+.icons i{
+    margin: 10px 90px; 
+}
+footer i:nth-child(1){
+    color:#4267B2 ;
+}
+footer i:nth-child(2){
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%,
+     #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    color: white;
+    border-radius: 5px;
+}
+footer i:nth-child(3){
+    color: #1da1f2;
 }
