@@ -6,7 +6,7 @@
 
 }
 #banner{
-    background: url(/Acmeevents/bilder/New/Hero.jpg) fixed;
+    background: url(/bilder/New/Hero.jpg) fixed;
     background-size: cover;
     height: 70vh;
     background-position-y: -300px ;
@@ -15,7 +15,7 @@
 
 #main-header{
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     align-items: center;
     height: 97px;
 }
@@ -27,7 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1800px;
+    width: 1700px;
 }
 .main-header-navbar button{
     color: white;
@@ -126,32 +126,33 @@
 
 #card0{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/New/Card1.jpg");
+    background-image: url("/bilder/New/Card1.jpg");
 }
 
 #card1{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/New/Card2.jpg");
+    background-image: url("/bilder/New/Card2.jpg");
 }
 
 #card2{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/New/Card3.jpg");
+    background-image: url("/bilder/New/Card3.jpg");
 }
 
 #card3{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/New/Card4.jpg");
+    background-image: url("/bilder/New/Card4.jpg");
 }
 
 #card4{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/New/Card5.jpg");
+    background-image: url("/bilder/New/Card5.jpg");
 }
 
 #card5{
     background-size: cover;
-    background-image: url("/Acmeevents/bilder/New/Card6.jpg");
+    background-image: url("/bilder/New/Card6.jpg");
+    background-position-y: -100px ;
 }
 
 .contact-section{
