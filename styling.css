@@ -5,7 +5,7 @@
 
 }
 #banner{
-    background: url(/bilder/pexels-josh-sorenson-976866.jpg) fixed;
+    background: url(/Acmeevents/bilder/pexels-josh-sorenson-976866.jpg) fixed;
     background-size: cover;
     height: 70vh;
     background-position-y: -300px ;
@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1900px;
+    width: 1800px;
 }
 .main-header-navbar button{
     color: white;
@@ -125,30 +125,30 @@
 */
 #card0{
     background-size: cover;
-    background-image: url("/bilder/pexels-andrea-piacquadio-3760089.jpg");
+    background-image: url("/Acmeevents/bilder/pexels-andrea-piacquadio-3760089.jpg");
 }
 
 #card1{
     background-size: cover;
-    background-image: url("/bilder/pexels-andrea-piacquadio-3862089.jpg");
+    background-image: url("/Acmeevents/bilder/pexels-andrea-piacquadio-3862089.jpg");
 }
 
 #card2{
     background-size: cover;
-    background-image: url("/bilder/pexels-fauxels-3183150.jpg");
+    background-image: url("/Acmeevents/bilder/pexels-fauxels-3183150.jpg");
 }
 
 #card3{
     background-size: cover;
-    background-image: url("/bilder/pexels-fauxels-3184180.jpg");
+    background-image: url("/Acmeevents/bilder/pexels-fauxels-3184180.jpg");
 }
 
 #card4{
     background-size: cover;
-    background-image: url("/bilder/pexels-josh-sorenson-976866.jpg");
+    background-image: url("/Acmeevents/bilder/pexels-josh-sorenson-976866.jpg");
 }
 
 #card5{
     background-size: cover;
-    background-image: url("/bilder/pexels-lucas-allmann-442540.jpg");
+    background-image: url("/Acmeevents/bilder/pexels-lucas-allmann-442540.jpg");
 }
