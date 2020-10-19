@@ -124,9 +124,51 @@
     position: sticky; 
 }*/
 
-#card0{
+#card0-picture{
     background-size: cover;
     background-image: url("/bilder/New/Card1.jpg");
+    transition: 0.5s;
+
+}
+
+#card0{
+    background-size: cover;
+    flex-flow: column;
+    color: white;
+    font-weight: 900;    
+    transition: 0.5s;
+}
+
+#card0:hover{
+    background-size: cover;
+    display: flex;
+    flex-flow: column;
+    color: white;
+    font-size: 50px;
+    font-weight: 900;    
+    background-image: -webkit-linear-gradient(115deg, #6F73D2 50%, #6f72d262 50%);   
+    transition: 0.5s;
+   
+}
+
+
+#card0 p:nth-child(3):hover{
+    font-style: italic;
+}
+#card-mid{
+    position: relative;
+    text-align: center;
+    height: 50px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#card-bottom{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0px 0px 20px -35px;
 }
 
 #card1{
