@@ -120,13 +120,42 @@
 }*/
 
 #card0-picture{
-    background-size: cover;
     background-image: url("/bilder/New/Card1.jpg");
-    transition: 0.5s;
+  }
 
+#card1 {
+  background-image: url("bilder/New/Card2.jpg");  
 }
 
-#card0{
+#card2 {
+  background-image: url("bilder/New/Card3.jpg");
+}
+
+#card3 {
+  background-image: url("bilder/New/Card4.jpg");
+}
+
+#card4 {
+  background-image: url("bilder/New/Card5.jpg");
+}
+
+#card5 {
+  background-image: url("bilder/New/Card6.jpg");
+}
+
+.card-picture{
+  background-position: center;
+  background-size: 100%;
+  transition: 0.5s;
+}
+.card-picture:hover{
+  background-image: url("/bilder/New/Card1.jpg");
+  background-size: 140%;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.card{
     background-size: cover;
     flex-flow: column;
     color: white;
@@ -134,21 +163,22 @@
     transition: 0.5s;
 }
 
-#card0:hover{
+.card:hover{
+    background-size: 150%;
     background-size: cover;
     display: flex;
     flex-flow: column;
     color: white;
     font-size: 50px;
     font-weight: 900;    
-    background-image: -webkit-linear-gradient(115deg, #6F73D2 50%, #6f72d262 50%);   
-    transition: 0.5s;
-   
+    background-image: -webkit-linear-gradient(115deg, #6F73D2 50%, #6f72d262 50%);
+    background-color:#6f72d291;
+    transition: 0.7s;   
 }
 
-
-#card0 p:nth-child(3):hover{
-    font-style: italic;
+#card-mid p{
+    font-size: 50px;
+    font-weight: 900; 
 }
 #card-mid{
     position: relative;
@@ -164,32 +194,6 @@
     justify-content: flex-end;
     align-items: flex-end;
     margin: 0px 0px 20px -35px;
-}
-
-#card1 {
-  background-size: cover;
-  background-image: url("bilder/New/Card2.jpg");
-}
-
-#card2 {
-  background-size: cover;
-  background-image: url("bilder/New/Card3.jpg");
-}
-
-#card3 {
-  background-size: cover;
-  background-image: url("bilder/New/Card4.jpg");
-}
-
-#card4 {
-  background-size: cover;
-  background-image: url("bilder/New/Card5.jpg");
-}
-
-#card5 {
-  background-size: cover;
-  background-image: url("bilder/New/Card6.jpg");
-  background-position-y: -100px;
 }
 
 .contact-section {
