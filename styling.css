@@ -23,12 +23,17 @@
   width: 70px;
 }
 .main-header-navbar {
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 1700px;
 }
-.main-header-navbar button {
+.main-header-navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   color: white;
   margin-left: 60px;
   font-size: 20px;
@@ -38,11 +43,11 @@
   display: flex;
   position: relative;
 }
-.main-header-navbar-left-buttons button:hover {
+.main-header-navbar-left-buttons a:hover {
   background-color: #7681b3;
   transition: 0.3s;
 }
-.main-header-navbar-left-buttons button {
+.main-header-navbar-left-buttons a {
   background-color: transparent;
   border-style: none;
   border-radius: 50px;
@@ -50,7 +55,7 @@
   height: 47px;
   transition: 0.3s;
 }
-.main-header-navbar-right-buttons button {
+.main-header-navbar-right-buttons a {
   background-color: #7681b3;
   border-style: none;
   border-radius: 50px;
@@ -91,7 +96,10 @@
   margin-bottom: 50px;
 }
 
-#banner-body-content button {
+#banner-body-content a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   width: 249.85px;
   height: 58px;
