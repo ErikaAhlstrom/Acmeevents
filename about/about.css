@@ -1,0 +1,249 @@
+* {
+    font-family: "Asap", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  #banner {
+    background: url(/bilder/New/Hero.jpg) fixed;
+    background-size: cover;
+    height: 15vh;
+    background-position-y: -300px;
+    background-repeat: no-repeat;
+  }
+  
+  #main-header {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 97px;
+  }
+  #logo {
+    position: relative;
+    width: 70px;
+  }
+  .main-header-navbar {
+    padding: 20px;
+    flex-flow: row wrap;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .main-header-navbar a {
+    text-decoration: none;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-left: 60px;
+    font-size: 20px;
+  }
+  
+  .main-header-navbar-left-buttons {
+    display: flex;
+    position: relative;
+    flex: 1 auto;
+
+  }
+  .main-header-navbar-left-buttons a:hover {
+    background-color: #7681b3;
+    transition: 0.3s;
+  }
+  .main-header-navbar-left-buttons a {
+    background-color: transparent;
+    border-style: none;
+    border-radius: 50px;
+    width: 115.07px;
+    height: 47px;
+    transition: 0.3s;
+  }
+  .main-header-navbar-right-buttons a {
+    text-decoration: none;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7681b3;
+    border-style: none;
+    border-radius: 50px;
+    width: 115.07px;
+    height: 47px;
+  }
+  .main-header-navbar-left-buttons-nav {
+    display: flex;
+    align-items: center;
+  }
+  #banner-body {
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 515px;
+  }
+  #banner-body-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 433px;
+  }
+  
+  #banner-body-content h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 55px;
+    margin-bottom: 26px;
+  }
+  #banner-body-content p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  #banner-body-content a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 249.85px;
+    height: 58px;
+    background: #7681b3;
+    border-style: none;
+    border-radius: 309px;
+    font-size: 20px;
+    line-height: 23px;
+  }  
+
+.body-section{
+	margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: grid;
+}
+
+
+.row{  
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 20px;
+    grid-row-gap: 10px;
+}
+
+#about-section{
+    float: left;
+    padding: 20px;
+    color: #5e5e5e;
+    background-color: #d9f0ff;
+}
+
+#team-section{
+    float: left;
+    padding: 40px;
+    color: #5e5e5e;
+    background-color: #d9f0ff;
+}
+
+.column-4{
+    float: left;
+}
+
+#team-section img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+}
+
+#team-section :nth-child(2) img{
+  background-image: url(/bilder/New/antonio.jpg);
+  background-size: 100%;
+  filter: grayscale(100%);
+
+}
+
+#team-section :nth-child(3) img{
+  background-image: url(/bilder/New/mathilde.jpg);
+  background-size: 200%;
+  background-position-x: -80px ;
+  filter: grayscale(100%);
+
+}
+
+#team-section :nth-child(4) img{
+  background-image: url(/bilder/New/Georgios.jpg);
+  background-size: 100%;
+  filter: grayscale(100%);
+
+}
+
+#team-section :nth-child(5) img{
+  background-image: url(/bilder/New/seb.jpg);
+  background-size: 100%;
+  filter: grayscale(100%);
+
+}
+
+#adress-section{
+    float: left;
+    padding: 20px;
+    color: #5e5e5e;
+    background-color: #d9f0ff;
+}
+.column-2{
+    float: left;   
+    padding: 20px;  
+    border: 1px solid black ;
+    background-color: white;
+}
+
+
+@media screen and (max-width: 800px) {
+    #main-header{
+        width: 100%;
+    }
+    .row{   
+        flex-direction: column;
+    }
+    #team-section{
+        width: 100%;
+    }
+    .column-4{
+        width: 50%;
+    }
+    #team-section img{
+        width: 100px;
+        height: 100px;
+    }
+	#adress-section{
+        width: 100%;
+    }
+    .column-2{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #about-section{
+        width:100%;
+        font-size: 20px;
+    }
+    #team-section{
+        width:100%;
+    }
+    .column-4{
+        width:25%;
+    }
+	#adress-section{
+        width: 100%;
+    }
+    .column-2{
+        width: 50%;
+    }
+}
+
+
