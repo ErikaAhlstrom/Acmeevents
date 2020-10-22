@@ -48,21 +48,26 @@
         </table>
       </div>
     </div>
-    <div id="add-event">
-      <h4>Add event</h4>
+    <div id="add-event" >
+      <h3>Add event</h3>
       <div id="frontpage-div">
-        <label for="frontpage">Frontpage</label>
-        <input type="checkbox" name="frontpage" id="frontpage" />
+
+        <label class="container">Front Page
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+        </label>
+<!--         <label for="frontpage">Frontpage</label>
+        <input type="checkbox" name="frontpage" id="frontpage" /> -->
       </div>
 
-      <label id="event-category-label" for="event-category">Event Category</label>
+      <label id="event-category-label" for="event-category">Category</label>
       <select name="event-category" id="event-category">
         <option value="conference">Conference</option>
         <option value="breakfast">Breakfast</option>
         <option value="Lunch">Lunch</option>
       </select>
 
-      <label id="company-name-label" for="company-name">Company Name</label>
+      <label id="company-name-label" for="company-name">Company</label>
       <input type="text" name="company-name" id="company-name" />
 
       <label id="start-time-label" for="start-time">Start time</label>
