@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Asap", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: repeat(20, 1fr);
+}
+.hidden {
+  display: none;
+}
+nav {
+  background-color: #7681b3;
+  grid-column: 1;
+  grid-row: 1/21;
+}
+#login {
+  grid-column: 2;
+  grid-row: 3/19;
+  margin: 6%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5%;
+  background: #ffffff;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+#login > h1 {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: flex-end;
+  color: #5e5e5e;
+}
+#username {
+  grid-column: 2;
+  grid-row: 3;
+  height: 40px;
+  align-self: center;
+  background-color: rgb(64, 81, 156, 0.2);
+  border: none;
+  padding: 5%;
+}
+#password {
+  grid-column: 3;
+  grid-row: 3;
+  height: 40px;
+  align-self: center;
+  background-color: rgb(64, 81, 156, 0.2);
+  border: none;
+  padding: 5%;
+}
+#login > button {
+  grid-column: 3;
+  grid-row: 4;
+  border-radius: 20px;
+  color: white;
+  margin-top: 10px;
+  height: 44px;
+  width: 122px;
+  background-color: #7681b3;
+  border-style: none;
+  justify-self: flex-end;
+}
