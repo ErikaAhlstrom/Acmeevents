@@ -9,14 +9,80 @@
   </head>
   <body>
     <nav></nav>
-    <div id="login">
-      <h1>LOGIN</h1>
+    <div id="login" class="hidden">
+      <div id="login-logo">
+        <h1>LOGIN</h1>
+        <hr />
+      </div>
       <input type="text" id="username" placeholder="Username" autocomplete="off" />
       <input type="password" id="password" placeholder="Password" />
       <button id="sign-in-button">SIGN IN</button>
     </div>
-    <div id="event-list" class="hidden"></div>
-    <div id="add-event" class="hidden"></div>
+    <div id="event-list" class="hidden">
+      <div id="event-list-header">
+        <h3>Event list</h3>
+        <button>ADD EVENT</button>
+      </div>
+      <div id="event-list-div">
+        <table>
+          <tr id="table-header">
+            <th>#</th>
+            <th>Event Title</th>
+            <th>Company</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Lunch</td>
+            <td>Spotify</td>
+            <td>12/4</td>
+            <td>
+              <button class="edit-button">EDIT</button>
+            </td>
+            <td>
+              <button class="delete-button">DELETE</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="add-event">
+      <h4>Add event</h4>
+      <div id="frontpage-div">
+        <label for="frontpage">Frontpage</label>
+        <input type="checkbox" name="frontpage" id="frontpage" />
+      </div>
+
+      <label id="event-category-label" for="event-category">Event Category</label>
+      <select name="event-category" id="event-category">
+        <option value="conference">Conference</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+      </select>
+
+      <label id="company-name-label" for="company-name">Company Name</label>
+      <input type="text" name="company-name" id="company-name" />
+
+      <label id="start-time-label" for="start-time">Start time</label>
+      <input type="time" name="start-time" id="start-time" />
+
+      <label id="end-time-label" for="end-time">End time</label>
+      <input type="time" name="end-time" id="end-time" />
+
+      <label id="start-date-label" for="start-date">Start date</label>
+      <input type="date" name="start-date" id="start-date" />
+
+      <label id="end-date-label" for="end-date">End date</label>
+      <input type="date" name="end-date" id="end-date" />
+
+      <label id="info-text-label" for="info-text">Info text</label>
+      <textarea name="info-text" id="info-text" cols="30" rows="10"></textarea>
+
+      <button id="cancel-button">CANCEL</button>
+      <button id="save-button">SAVE</button>
+    </div>
     <div id="edit-event" class="hidden"></div>
   </body>
 </html>

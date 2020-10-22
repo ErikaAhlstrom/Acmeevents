@@ -127,12 +127,12 @@
     position: sticky; 
 }*/
 
-#card0-picture{
-    background-image: url("/bilder/New/Card1.jpg");
-  }
+#card0-picture {
+  background-image: url("/bilder/New/Card1.jpg");
+}
 
 #card1 {
-  background-image: url("bilder/New/Card2.jpg");  
+  background-image: url("bilder/New/Card2.jpg");
 }
 
 #card2 {
@@ -151,58 +151,58 @@
   background-image: url("bilder/New/Card6.jpg");
 }
 
-.card-picture{
+.card-picture {
   background-position: center;
   background-size: 100%;
   transition: 0.5s;
 }
-.card-picture:hover{
+.card-picture:hover {
   background-image: url("/bilder/New/Card1.jpg");
   background-size: 140%;
   background-position: center;
   transition: 0.5s;
 }
 
-.card{
-    background-size: cover;
-    flex-flow: column;
-    color: white;
-    font-weight: 900;    
-    transition: 0.5s;
-    overflow: hidden;
+.card {
+  background-size: cover;
+  flex-flow: column;
+  color: white;
+  font-weight: 900;
+  transition: 0.5s;
+  overflow: hidden;
 }
 
-.card:hover{
-    background-size: 150%;
-    background-size: cover;
-    display: flex;
-    flex-flow: column;
-    color: white;
-    font-size: 50px;
-    font-weight: 900;    
-    background-image: -webkit-linear-gradient(115deg, #6F73D2 50%, #6f72d262 50%);
-    background-color:#6f72d291;
-    transition: 0.7s;   
+.card:hover {
+  background-size: 150%;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  color: white;
+  font-size: 50px;
+  font-weight: 900;
+  background-image: -webkit-linear-gradient(115deg, #6f73d2 50%, #6f72d262 50%);
+  background-color: #6f72d291;
+  transition: 0.7s;
 }
 
-#card-mid p{
-    font-size: 50px;
-    font-weight: 900; 
+#card-mid p {
+  font-size: 50px;
+  font-weight: 900;
 }
-#card-mid{
-    position: relative;
-    text-align: center;
-    height: 50px;
-    top: 50%;
-    transform: translate(0, -50%);
+#card-mid {
+  position: relative;
+  text-align: center;
+  height: 50px;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
-#card-bottom{
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin: 0px 0px 20px -35px;
+#card-bottom {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0px 0px 20px -35px;
 }
 
 .contact-section {

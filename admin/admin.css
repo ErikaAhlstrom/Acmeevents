@@ -4,21 +4,19 @@
   box-sizing: border-box;
   font-family: "Asap", sans-serif;
 }
-
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: repeat(20, 1fr);
-}
-.hidden {
-  display: none;
 }
 nav {
   background-color: #7681b3;
   grid-column: 1;
   grid-row: 1/21;
 }
+
+/*========================================================Logincard===================================================================*/
 #login {
   grid-column: 2;
   grid-row: 3/19;
@@ -31,11 +29,17 @@ nav {
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
-#login > h1 {
+#login-logo {
   grid-column: 2;
   grid-row: 2;
   align-self: flex-end;
   color: #5e5e5e;
+}
+#login-logo > hr {
+  height: 5px;
+  background-color: #7681b3;
+  border-radius: 5px;
+  width: 40%;
 }
 #username {
   grid-column: 2;
@@ -61,9 +65,179 @@ nav {
   border-radius: 20px;
   color: white;
   margin-top: 10px;
-  height: 44px;
-  width: 122px;
+  height: auto;
+  width: auto;
+  padding: 10px 20px;
   background-color: #7681b3;
   border-style: none;
   justify-self: flex-end;
+}
+/*========================================================Login card-end===============================================================*/
+/*========================================================Even list card================================================================*/
+#event-list {
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  grid-column: 2;
+  grid-row: 2/20;
+  margin: 6%;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+#event-list-header {
+  background-color: rgb(64, 81, 156, 0.2);
+  padding: 0.5%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+#event-list-header > h3 {
+  margin-left: 20px;
+  color: rgb(70, 70, 70);
+}
+#event-list-header > button {
+  border-radius: 20px;
+  color: white;
+  height: auto;
+  width: auto;
+  padding: 10px 20px;
+  background-color: #7681b3;
+  border-style: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+#event-list-div {
+  overflow: auto;
+  height: 100%;
+}
+table {
+  width: 100%;
+  padding: 0 20px;
+}
+#table-header :nth-child(1) {
+  width: 10%;
+}
+#table-header :nth-child(2) {
+  width: 30%;
+}
+#table-header :nth-child(3) {
+  width: 20%;
+}
+#table-header :nth-child(4) {
+  width: 10%;
+}
+#table-header :nth-child(5) {
+  width: 15%;
+}
+#table-header :nth-child(6) {
+  width: 15%;
+}
+th {
+  text-align: start;
+  padding: 10px;
+}
+tr {
+  height: 80px;
+}
+td {
+  padding: 10px;
+}
+.edit-button {
+  border-radius: 20px;
+  color: white;
+  height: auto;
+  width: auto;
+  padding: 10px 20px;
+  background-color: #76b37c;
+  border-style: none;
+  cursor: pointer;
+}
+.delete-button {
+  border-radius: 20px;
+  color: white;
+  height: auto;
+  width: auto;
+  padding: 10px 20px;
+  background-color: #e59090;
+  border-style: none;
+  cursor: pointer;
+}
+tr :nth-child(5),
+tr :nth-child(6) {
+  text-align: center;
+}
+
+/*========================================================Even list card end============================================================*/
+/*========================================================Add event card================================================================*/
+#add-event {
+  grid-column: 2;
+  grid-row: 1/21;
+  margin: 6%;
+  background: #ffffff;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20% 10% 10% 10% 30% 20%;
+}
+#add-event > h4 {
+  grid-column: 1;
+  grid-row: 1;
+}
+#frontpage-div {
+  grid-area: 1/4;
+}
+#event-category-label {
+  grid-area: 2/1;
+}
+#event-category {
+  grid-area: 2/2;
+}
+#company-name-label {
+  grid-area: 2/3;
+}
+#company-name {
+  grid-area: 2/4;
+}
+#start-time-label {
+  grid-area: 3/1;
+}
+#start-time {
+  grid-area: 3/2;
+}
+#end-time-label {
+  grid-area: 3/3;
+}
+#end-time {
+  grid-area: 3/4;
+}
+#start-date-label {
+  grid-area: 4/1;
+}
+#start-date {
+  grid-area: 4/2;
+}
+#end-date-label {
+  grid-area: 4/3;
+}
+#end-date {
+  grid-area: 4/4;
+}
+#info-text-label {
+  grid-area: 5/1;
+}
+#info-text {
+  grid-area: 5/2/6/6;
+}
+#cancel-button {
+  grid-column: 2;
+  grid-row: 6;
+}
+#save-button {
+  grid-column: 3;
+  grid-row: 6;
+}
+/*========================================================Add event cart end============================================================*/
+
+.hidden {
+  display: none !important;
 }
