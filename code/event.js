@@ -21,3 +21,4 @@ class Event {
     this.participants = participants;
   }
 }
+//hejsan
