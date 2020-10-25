@@ -9,15 +9,21 @@ html, body {
   margin: 0; 
 }
 
-html {
-	scroll-behavior: smooth;
-} 
-
 .nav {
-  background: url(/bilder/New/Hero.jpg);
+  background-color: #83c9f4;
   height: 15vh;
   text-align: right;
   line-height: 70px;
+}
+
+.nav-left {
+  float: left;
+}
+
+#logo {
+  position: relative;
+  float: left;
+  width: 70px;
 }
 
 .menu {
@@ -27,6 +33,7 @@ html {
   background-position-y: -300px;
   background-repeat: no-repeat;
 }
+
 .menu a {
   clear: right;
   text-decoration: none;
@@ -46,6 +53,9 @@ label {
 #toggle {
   display: none;
 }
+
+
+
 /*
 #banner {
   background: url(/bilder/New/Hero.jpg) fixed;
@@ -262,14 +272,19 @@ iframe{
     display: block;
     cursor: pointer;
   }
+  .nav-left {
+	  float: none;
+	  display: block;
+  }
   .menu {
     text-align: center;
     width: 100%;
     display: none;
   }
   .menu a {
+    position: relative;
+    background-color: #83c9f4;
     display: block;
-    border-bottom: 1px solid #EAEAEB;
     margin: 0;
   }
   #toggle:checked + .menu {
