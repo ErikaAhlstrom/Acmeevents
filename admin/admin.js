@@ -44,13 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
     addEventPage.classList.add("hidden");
     eventListPage.classList.remove("hidden");
   });
+
   saveButton.addEventListener("click", function () {
     storageArray = JSON.parse(localStorage.getItem("storageArray"));
+
     if (!Array.isArray(storageArray)) {
       storageArray = [];
     }
 
     localStorage.removeItem("storageArray");
+
     storageArray.push(
       new Event(
         myArray[0].value,
@@ -63,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
         myArray[7].checked
       )
     );
-    console.log(JSON.stringify(storageArray));
 
     localStorage.setItem("storageArray", JSON.stringify(storageArray));
+    console.log(JSON.parse(localStorage.getItem("storageArray")));
   });
 });
