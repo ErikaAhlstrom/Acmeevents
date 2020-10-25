@@ -3,6 +3,50 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0; 
+}
+
+html {
+	scroll-behavior: smooth;
+} 
+
+.nav {
+  background: url(/bilder/New/Hero.jpg);
+  height: 15vh;
+  text-align: right;
+  line-height: 70px;
+}
+
+.menu {
+  background: url(/bilder/New/Hero.jpg);
+  height: 15vh;
+  background-size: cover;   
+  background-position-y: -300px;
+  background-repeat: no-repeat;
+}
+.menu a {
+  clear: right;
+  text-decoration: none;
+  color: gray;
+  margin: 0 10px;
+  line-height: 70px;
+}
+
+label {
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 70px;
+  display: none;
+  width: 26px;
+  float: right;
+}
+#toggle {
+  display: none;
+}
+/*
 #banner {
   background: url(/bilder/New/Hero.jpg) fixed;
   background-size: cover;
@@ -115,13 +159,7 @@
   font-size: 20px;
   line-height: 23px;
 }  
-
-.body-section{
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
+*/
 .row{  
   display: flex;
   flex-wrap: wrap;
@@ -219,7 +257,25 @@ iframe{
   width: 600px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {     
+  label {
+    display: block;
+    cursor: pointer;
+  }
+  .menu {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .menu a {
+    display: block;
+    border-bottom: 1px solid #EAEAEB;
+    margin: 0;
+  }
+  #toggle:checked + .menu {
+    display: block;
+  }
+
   .row{   
     flex-direction: column;
   }
