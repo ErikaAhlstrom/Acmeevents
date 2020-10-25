@@ -8,7 +8,8 @@ class Event {
     location = "unknown",
     eventOwner = "unknown",
     admin = "unknown",
-    participants = "unknown"
+    participants = "unknown",
+    location = "unknown"
   ) {
     this.name = name;
     this.start = start;
@@ -19,6 +20,7 @@ class Event {
     this.eventOwner = eventOwner;
     this.admin = admin;
     this.participants = participants;
+    this.location = location;
   }
 }
 //hejsan

@@ -11,7 +11,7 @@
     <nav></nav>
 
     <!------------------ LOGIN PAGE ---------------->
-    <div id="login"  class="hidden">
+    <div id="login-page">
       <div id="login-logo">
         <h1>LOGIN</h1>
         <hr />
@@ -23,10 +23,10 @@
 
     <!------------------ EVENT LIST PAGE ---------------->
 
-    <div id="event-list" class="hidden">
+    <div id="event-list-page" class="hidden">
       <div id="event-list-header">
         <h3>Event list</h3>
-        <button>ADD EVENT</button>
+        <button id="add-event-button">ADD EVENT</button>
       </div>
       <div id="event-list-div">
         <table>
@@ -56,15 +56,15 @@
 
     <!------------------ ADD EVENT PAGE ---------------->
 
-    <div id="add-event">
+    <div id="add-event-page" class="hidden">
       <h3>Add event</h3>
       <div id="frontpage-div">
-
-        <label class="container">Front Page
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
+        <label class="container"
+          >Front Page
+          <input type="checkbox" checked="checked" />
+          <span class="checkmark"></span>
         </label>
-<!--         <label for="frontpage">Frontpage</label>
+        <!--         <label for="frontpage">Frontpage</label>
         <input type="checkbox" name="frontpage" id="frontpage" /> -->
       </div>
 
@@ -100,5 +100,7 @@
     <!------------------ EDIT EVENT PAGE ---------------->
 
     <div id="edit-event"></div>
+    <script src="admin.js"></script>
+    <script src="/code/event.js"></script>
   </body>
 </html>
