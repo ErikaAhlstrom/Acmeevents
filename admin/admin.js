@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  /*
-  let eventCategory = document.getElementById("event-category");
-  let companyName = document.getElementById("company-name");
-  let startTime = document.getElementById("start-time");
-  let endTime = document.getElementById("end-time");
-  let startDate = document.getElementById("start-date");
-  let endDate = document.getElementById("end-date");
-  let infoText = document.getElementById("info-text");*/
   let myArray = [];
   myArray.push(
     document.getElementById("event-category"),
@@ -75,5 +67,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     localStorage.setItem("storageArray", JSON.stringify(storageArray));
   });
-  localStorage.removeItem("storeage");
 });
