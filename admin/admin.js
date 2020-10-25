@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("info-text"),
     document.getElementById("front-page-check")
   );
-  let storageArray;
   let cancelButton = document.getElementById("cancel-button");
   let saveButton = document.getElementById("save-button");
   let loginPage = document.getElementById("login-page");
@@ -25,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (usernameInput.value == "123" && passwordInput.value == "456") {
       loginPage.classList.add("hidden");
       eventListPage.classList.remove("hidden");
+
+      let storageArray = getStoredArray();
+
+      if (Array.isArray(storageArray)) {
+        listOutput(storageArray);
+      }
     } else {
       alert("Fel användarnamn eller lösenord!");
       usernameInput.value = "";
@@ -43,17 +48,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     addEventPage.classList.add("hidden");
     eventListPage.classList.remove("hidden");
+    let storageArray = getStoredArray();
+    listOutput(storageArray);
   });
 
   saveButton.addEventListener("click", function () {
-    storageArray = JSON.parse(localStorage.getItem("storageArray"));
-
-    if (!Array.isArray(storageArray)) {
+    let storageArray = getStoredArray();
+    if (!storageArray) {
       storageArray = [];
     }
-
-    localStorage.removeItem("storageArray");
-
+    /*
+    tempName = new Event(
+      myArray[0].value,
+      myArray[1].value,
+      myArray[2].value,
+      myArray[3].value,
+      myArray[4].value,
+      myArray[5].value,
+      myArray[6].value,
+      myArray[7].checked
+    );*/
     storageArray.push(
       new Event(
         myArray[0].value,
@@ -66,8 +80,60 @@ document.addEventListener("DOMContentLoaded", function () {
         myArray[7].checked
       )
     );
+    //storageArray.push(tempName);
 
-    localStorage.setItem("storageArray", JSON.stringify(storageArray));
-    console.log(JSON.parse(localStorage.getItem("storageArray")));
+    storeArray(storageArray);
   });
 });
+
+function listOutput(storageArray) {
+  let eventTable = document.getElementById("event-table");
+  for (let i = 0; i < storageArray.length; i++) {
+    let aNewRow = document.createElement("tr");
+    let eventNumber = document.createElement("td");
+    let eventCategory = document.createElement("td");
+    let companyName = document.createElement("td");
+    let date = document.createElement("td");
+    let editTd = document.createElement("td");
+    let editButton = document.createElement("button");
+    let deleteTd = document.createElement("td");
+    let deleteButton = document.createElement("button");
+
+    eventNumber.textContent = i + 1;
+    eventCategory.textContent = storageArray[i].category;
+    companyName.textContent = storageArray[i].companyName;
+    date.textContent = storageArray[i].startDate;
+    editButton.textContent = "EDIT";
+    editButton.classList.add("edit-button");
+    deleteButton.textContent = "DELETE";
+    deleteButton.classList.add("delete-button");
+    editTd.appendChild(editButton);
+    deleteTd.appendChild(deleteButton);
+
+    aNewRow.appendChild(eventNumber);
+    aNewRow.appendChild(eventCategory);
+    aNewRow.appendChild(companyName);
+    aNewRow.appendChild(date);
+    aNewRow.appendChild(editTd);
+    aNewRow.appendChild(deleteTd);
+
+    eventTable.appendChild(aNewRow);
+
+    deleteButton.addEventListener("click", function () {
+      aNewRow.remove();
+      storageArray.splice(i, 1);
+      storeArray(storageArray);
+      console.log(storageArray);
+    });
+  }
+}
+
+function getStoredArray() {
+  let storageArray = JSON.parse(localStorage.getItem("storageArray"));
+  localStorage.removeItem("storageArray");
+  return storageArray;
+}
+
+function storeArray(storageArray) {
+  localStorage.setItem("storageArray", JSON.stringify(storageArray));
+}
