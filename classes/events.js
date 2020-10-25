@@ -92,10 +92,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-/*
-submit.addEventlistener("click", function(e) {
-  createEvent(new Event());
-});
-*/
 
 
