@@ -1,26 +1,25 @@
 class Event {
   constructor(
-    name = "unknown",
-    start = "unknown",
-    end = "unknown",
-    time = "unknown",
     category = "unknown",
+    companyName = "unknown",
+    startTime = "unknown",
+    endTime = "unknown",
+    startDate = "unknorn",
+    endDate = "unknown",
+    infoText = "unknown",
+    frontPage = "unknown",
     location = "unknown",
-    eventOwner = "unknown",
-    admin = "unknown",
-    participants = "unknown",
-    location = "unknown"
+    participants = "unknown"
   ) {
-    this.name = name;
-    this.start = start;
-    this.end = end;
-    this.time = time;
     this.category = category;
+    this.companyName = companyName;
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.startDate = startDate;
+    this.endDate = endDate;
+    this.infoText = infoText;
+    this.frontPage = frontPage;
     this.location = location;
-    this.eventOwner = eventOwner;
-    this.admin = admin;
     this.participants = participants;
-    this.location = location;
   }
 }
-//hejsan

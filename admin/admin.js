@@ -15,8 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("end-time"),
     document.getElementById("start-date"),
     document.getElementById("end-date"),
-    document.getElementById("info-text")
+    document.getElementById("info-text"),
+    document.getElementById("front-page-check")
   );
+  let storageArray;
   let cancelButton = document.getElementById("cancel-button");
   let saveButton = document.getElementById("save-button");
   let loginPage = document.getElementById("login-page");
@@ -50,4 +52,28 @@ document.addEventListener("DOMContentLoaded", function () {
     addEventPage.classList.add("hidden");
     eventListPage.classList.remove("hidden");
   });
+  saveButton.addEventListener("click", function () {
+    storageArray = JSON.parse(localStorage.getItem("storageArray"));
+    if (!Array.isArray(storageArray)) {
+      storageArray = [];
+    }
+
+    localStorage.removeItem("storageArray");
+    storageArray.push(
+      new Event(
+        myArray[0].value,
+        myArray[1].value,
+        myArray[2].value,
+        myArray[3].value,
+        myArray[4].value,
+        myArray[5].value,
+        myArray[6].value,
+        myArray[7].checked
+      )
+    );
+    console.log(JSON.stringify(storageArray));
+
+    localStorage.setItem("storageArray", JSON.stringify(storageArray));
+  });
+  localStorage.removeItem("storeage");
 });
