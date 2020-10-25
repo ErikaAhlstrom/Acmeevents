@@ -1,9 +1,8 @@
 * {
   font-family: "Asap", sans-serif;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
+
 #banner {
   background: url(/bilder/New/Hero.jpg) fixed;
   background-size: cover;
@@ -121,9 +120,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  display: grid;
 }
-
 
 .row{  
   display: flex;
@@ -140,11 +137,19 @@
   background-color: #d9f0ff;
 }
 
+#about-section > hr{
+  width: 20%;
+}
+
 #team-section{
   float: left;
   padding: 40px;
   color: #5e5e5e;
   background-color: #d9f0ff;
+}
+
+#team-section > hr{
+  width: 20%;
 }
 
 .column-4{
@@ -155,46 +160,51 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-
-}
-
-#team-section :nth-child(2) img{
-  background-image: url(/bilder/New/antonio.jpg);
-  background-size: 100%;
-  filter: grayscale(100%);
-
 }
 
 #team-section :nth-child(3) img{
+  background-image: url(/bilder/New/antonio.jpg);
+  background-size: 100%;
+  filter: grayscale(100%);
+}
+
+#team-section :nth-child(4) img{
   background-image: url(/bilder/New/mathilde.jpg);
   background-size: 200%;
   background-position-x: -80px ;
   filter: grayscale(100%);
-
-}
-
-#team-section :nth-child(4) img{
-  background-image: url(/bilder/New/Georgios.jpg);
-  background-size: 100%;
-  filter: grayscale(100%);
-
 }
 
 #team-section :nth-child(5) img{
+  background-image: url(/bilder/New/Georgios.jpg);
+  background-size: 100%;
+  filter: grayscale(100%);
+}
+
+#team-section :nth-child(6) img{
   background-image: url(/bilder/New/seb.jpg);
   background-size: 100%;
   filter: grayscale(100%);
-
 }
 
 #adress-section{
+  
   float: left;
   padding: 20px;
+  justify-content: center;
   color: #5e5e5e;
   background-color: #d9f0ff;
 }
-.column-2{
+
+#adress-section > hr{
+  width: 20%;
+}
+
+.column{
+  padding: 10px;
+  display: flex;
   float: left;
+  justify-content: center;
 }
 
 iframe{
@@ -226,7 +236,7 @@ iframe{
   #adress-section{
     width: 100%;
   }
-  .column-2{
+  .column{
     width: 100%;
   }
   .gmap_canvas{
@@ -251,8 +261,8 @@ iframe{
 #adress-section{
     width: 100%;
   }
-  .column-2{
-    width: 50%;
+  .column{
+    width: 100%;
   }
 }
 
