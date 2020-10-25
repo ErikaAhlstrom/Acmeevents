@@ -14,6 +14,44 @@ nav {
   background-color: #7681b3;
   grid-column: 1;
   grid-row: 1/21;
+  color: white;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#admin-nav-bar{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+#admin-header {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  align-items: center;
+  padding-top: 30px;
+}
+
+#admin-header hr {
+  background-color: white;
+  height: 0.01%;
+  border-radius: 5px;
+  width: 85%;
+  border-color: white;
+  margin-top: 20px;
+  color: white;
+}
+
+#admin-nav-bar a {
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  padding: 30px;
+  cursor: pointer;
 }
 
 /*========================================================Logincard===================================================================*/
@@ -168,7 +206,8 @@ tr :nth-child(6) {
 
 /*========================================================Even list card end============================================================*/
 /*========================================================Add event card================================================================*/
-#add-event-page {
+#add-event-page, 
+#edit-event {
   grid-column: 2;
   grid-row: 1/21;
   margin: 6%;
@@ -177,79 +216,136 @@ tr :nth-child(6) {
   border-radius: 10px;
   display: grid;
   font-size: 1.2em;
-
-  /*   grid-template-columns: repeat(4, 1fr);
- */
-  grid-template-columns: 17% 31% 21% 31%;
-  grid-template-rows: 20% 10% 10% 10% 30% 20%;
 }
+
 #add-event-page > h4 {
+ 
+ grid-template-columns: 17% 31% 21% 31%;
+ grid-template-rows: 17% 8% 8% 8% 8% 8% 26% 17%;
+}
+#add-event > h4, 
+#edit-event > h4 {
   grid-column: 1;
   grid-row: 1;
 }
-#frontpage-div {
+#frontpage-div,
+#edit-frontpage-div {
   grid-area: 1/4;
   align-items: center;
   display: flex;
   justify-self: left;
 }
-#event-category-label {
+#event-category-label,
+#edit-event-category-label {
   grid-area: 2/1;
 }
-#event-category {
+#event-category,
+#edit-event-category {
   grid-area: 2/2;
 }
-#company-name-label {
+#company-name-label,
+#edit-company-name-label {
   grid-area: 2/3;
 }
-#company-name {
+#company-name,
+#edit-company-name {
   grid-area: 2/4;
 }
-#start-time-label {
+#start-time-label,
+#edit-start-time-label {
   grid-area: 3/1;
 }
-#start-time {
+#start-time,
+#edit-start-time {
   grid-area: 3/2;
 }
-#end-time-label {
+#end-time-label,
+#edit-end-time-label {
   grid-area: 3/3;
 }
-#end-time {
+#end-time,
+#edit-end-time {
   grid-area: 3/4;
 }
-#start-date-label {
+#start-date-label,
+#edit-start-date-label {
   grid-area: 4/1;
 }
-#start-date {
+#start-date,
+#edit-start-date {
   grid-area: 4/2;
 }
-#end-date-label {
+#end-date-label,
+#edit-end-date-label {
   grid-area: 4/3;
 }
-#end-date {
+#end-date,
+#edit-end-date {
   grid-area: 4/4;
 }
-#info-text-label {
+#location-label,
+#edit-location-label{
   grid-area: 5/1;
 }
-#info-text {
-  grid-area: 5/2/6/6;
+#location,
+#edit-location{
+  grid-area: 5/2;
 }
-#cancel-button {
+#participants-label,
+#edit-participants-label {
+  grid-area: 5/3;
+}
+#participants,
+#edit-participants {
+  grid-area: 5/4;
+}
+#administrator-label,
+#edit-administrator-label{
+  grid-area: 6/1;
+}
+
+#administrator,
+#edit-administrator{
+  grid-area: 6/2;
+}
+
+#eventmanager-label,
+#edit-eventmanager-label{
+  grid-area: 6/3;
+}
+
+#eventmanager,
+#edit-eventmanager{
+  grid-area: 6/4;
+}
+
+#info-text-label,
+#edit-info-text-label {
+  grid-area: 7/1;
+}
+#info-text,
+#edit-info-text {
+  grid-area: 7/2/7/7;
+}
+#cancel-button,
+#edit-cancel-button {
   grid-column: 2;
-  grid-row: 6;
+  grid-row: 8;
 }
-#save-button {
+#save-button,
+#edit-save-button {
   grid-column: 4;
-  grid-row: 6;
+  grid-row: 8;
 }
 
 #add-event-page {
   padding: 40px 80px 40px 40px;
 }
 
-#add-event-page input,
-#add-event-page select {
+#add-event-page input, 
+#add-event-page select,
+#edit-event input, 
+#edit-event select {
   height: 50px;
   align-self: center;
   background-color: rgb(64, 81, 156, 0.2);
@@ -258,7 +354,8 @@ tr :nth-child(6) {
   font-size: 1em;
 }
 
-#add-event-page textarea {
+#add-event-page textarea,
+#edit-event textarea {
   border: none;
   background-color: rgb(64, 81, 156, 0.2);
   resize: none;
@@ -272,27 +369,46 @@ tr :nth-child(6) {
 #end-time-label,
 #start-date-label,
 #end-date-label,
-#info-text-label {
+#info-text-label,
+#location-label,
+#participants-label,
+#administrator-label,
+#eventmanager-label,
+#edit-event-category-label,
+#edit-company-name-label,
+#edit-start-time-label,
+#edit-end-time-label,
+#edit-start-date-label,
+#edit-end-date-label,
+#edit-info-text-label,
+#edit-location-label,
+#edit-participants-label,
+#edit-administrator-label,
+#edit-eventmanager-label{
   height: 40px;
   align-self: center;
   padding: 7%;
 }
 
-#frontpage-div {
+#edit-frontpage-div {
   align-content: center;
   justify-content: center;
 }
 
-#add-event-page td {
+#add-event-page td,
+#edit-event td {
   align-self: center;
 }
 
-#add-event-page h3 {
+#add-event-page h3,
+#edit-event h3 {
+
   align-self: center;
   margin-left: 5%;
 }
 
-#save-button {
+#save-button,
+#edit-save-button {
   border-radius: 20px;
   color: white;
   height: auto;
@@ -305,7 +421,8 @@ tr :nth-child(6) {
   justify-self: right;
   margin-top: 10%;
 }
-#cancel-button {
+#cancel-button,
+#edit-cancel-button {
   border-radius: 20px;
   color: white;
   height: auto;
