@@ -75,6 +75,10 @@ class Admin {
       );
 
       localStorageHandler.storeArray(storageArray);
+
+      for (let i = 1; i < html.eventArray.length; i++) {
+        html.eventArray[i].value = "";
+      }
       alert("The Event is saved");
     });
   }
