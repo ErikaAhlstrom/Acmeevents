@@ -1,25 +1,29 @@
 class Event {
   constructor(
+    frontPage = "unknown",
     category = "unknown",
     companyName = "unknown",
     startTime = "unknown",
     endTime = "unknown",
     startDate = "unknorn",
     endDate = "unknown",
-    infoText = "unknown",
-    frontPage = "unknown",
     location = "unknown",
-    participants = "unknown"
+    participants = "unknown",
+    admin = "unknown",
+    eventManager = "unknown",
+    infoText = "unknown"
   ) {
+    this.frontPage = frontPage;
     this.category = category;
     this.companyName = companyName;
     this.startTime = startTime;
     this.endTime = endTime;
     this.startDate = startDate;
     this.endDate = endDate;
-    this.infoText = infoText;
-    this.frontPage = frontPage;
     this.location = location;
     this.participants = participants;
+    this.admin = admin;
+    this.eventManager = eventManager;
+    this.infoText = infoText;
   }
 }
