@@ -8,10 +8,20 @@
     <title>Admin</title>
   </head>
   <body>
-    <nav></nav>
+    <nav>
+      <div id="admin-header">
+        <h3>Admin</h3>
+        <hr />
+      </div>
+      <div id="admin-nav-bar">
+        <a href="/about/about.html" id="about-button">About</a>
+        <a href="/EventList/EventList.html" id="event-button">Event</a>
+        <a href="/index.html" id="home-button">Home</a>
+      </div>
+    </nav>
 
     <!------------------ LOGIN PAGE ---------------->
-    <div id="login"  class="hidden">
+    <div id="login-page">
       <div id="login-logo">
         <h1>LOGIN</h1>
         <hr />
@@ -23,10 +33,10 @@
 
     <!------------------ EVENT LIST PAGE ---------------->
 
-    <div id="event-list" class="hidden">
+    <div id="event-list-page" class="hidden">
       <div id="event-list-header">
         <h3>Event list</h3>
-        <button>ADD EVENT</button>
+        <button id="add-event-button">ADD EVENT</button>
       </div>
       <div id="event-list-div">
         <table>
@@ -56,16 +66,14 @@
 
     <!------------------ ADD EVENT PAGE ---------------->
 
-    <div id="add-event">
+    <div id="add-event-page" class="hidden">
       <h3>Add event</h3>
       <div id="frontpage-div">
-
-        <label class="container">Front Page
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
+        <label class="container"
+          >Front Page
+          <input type="checkbox" checked="checked" id="front-page-check" />
+          <span class="checkmark"></span>
         </label>
-<!--         <label for="frontpage">Frontpage</label>
-        <input type="checkbox" name="frontpage" id="frontpage" /> -->
       </div>
 
       <label id="event-category-label" for="event-category">Category</label>
@@ -90,6 +98,18 @@
       <label id="end-date-label" for="end-date">End date</label>
       <input type="date" name="end-date" id="end-date" />
 
+      <label id="location-label" for="location">Location</label>
+      <input type="input" name="location" id="location" />
+
+      <label id="participants-label" for="participants">Participants</label>
+      <input type="number" name="participants" id="participants" />
+
+      <label id="administrator-label" for="location">Administrator</label>
+      <input type="input" name="administrator" id="administrator" />
+
+      <label id="eventmanager-label" for="eventmanager">Event Manager</label>
+      <input type="input" name="eventmanager" id="eventmanager" />
+
       <label id="info-text-label" for="info-text">Info text</label>
       <textarea name="info-text" id="info-text" cols="30" rows="10"></textarea>
 
@@ -99,6 +119,60 @@
 
     <!------------------ EDIT EVENT PAGE ---------------->
 
-    <div id="edit-event"></div>
+    <!--     <div id="edit-event" class="hidden"></div>
+    <script src="admin.js"></script>
+    <script src="/classes/event.js"></script>
+    <div id="edit-event">
+      <h3>Edit event</h3>
+      <div id="edit-frontpage-div">
+
+        <label class="container">Front Page
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <label id="edit-event-category-label" for="edit-event-category">Category</label>
+      <select name="edit-event-category" id="edit-event-category">
+        <option value="conference">Conference</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+      </select>
+
+      <label id="edit-company-name-label" for="company-name">Company</label>
+      <input type="text" name="company-name" id="edit-company-name" />
+
+      <label id="edit-start-time-label" for="start-time">Start time</label>
+      <input type="time" name="start-time" id="edit-start-time" />
+
+      <label id="edit-end-time-label" for="end-time">End time</label>
+      <input type="time" name="end-time" id="edit-end-time" />
+
+      <label id="edit-start-date-label" for="start-date">Start date</label>
+      <input type="date" name="start-date" id="edit-start-date" />
+
+      <label id="edit-end-date-label" for="end-date">End date</label>
+      <input type="date" name="end-date" id="edit-end-date" />
+
+      <label id="edit-location-label" for="location">Location</label>
+      <input type="input" name="location" id="edit-location" />
+
+      <label id="edit-participants-label" for="participants">Participants</label>
+      <input type="number" name="participants" id="edit-participants" />
+
+      <label id="edit-administrator-label" for="location">Administrator</label>
+      <input type="input" name="administrator" id="edit-administrator" />
+
+      <label id="edit-eventmanager-label" for="eventmanager">Event Manager</label>
+      <input type="input" name="eventmanager" id="edit-eventmanager" />
+
+      <label id="edit-info-text-label" for="info-text">Info text</label>
+      <textarea name="info-text" id="edit-info-text" cols="30" rows="10"></textarea>
+
+      <button id="edit-cancel-button">CANCEL</button>
+      <button id="edit-save-button">SAVE</button>
+    </div> -->
+    <script src="admin.js"></script>
+    <script src="/classes/event.js"></script>
   </body>
 </html>
