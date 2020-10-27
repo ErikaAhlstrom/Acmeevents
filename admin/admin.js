@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function () {
-  new Admin();
+  new Admin(); //when admin page is fully loaded
 });

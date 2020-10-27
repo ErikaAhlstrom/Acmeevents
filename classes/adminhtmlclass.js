@@ -1,4 +1,6 @@
-class adminHtml {
+// all element-lookup methods for the admin class is gathered here to make the admin class look a bit tidier
+
+class adminDOM {
   constructor() {
     this.eventArray = [
       document.getElementById("front-page-check"),

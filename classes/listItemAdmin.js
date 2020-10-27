@@ -8,9 +8,11 @@ class ListItem {
     this.companyName = document.createElement("td");
     this.date = document.createElement("td");
     this.editTd = document.createElement("td");
-    this.editButton = document.createElement("button");
     this.deleteTd = document.createElement("td");
+
+    this.editButton = document.createElement("button");
     this.deleteButton = document.createElement("button");
+
     this.index = index;
     this.storedItem = this.localStorageHandler.getStoredArray()[this.index];
 
@@ -18,11 +20,12 @@ class ListItem {
     this.eventCategory.textContent = this.storedItem.category;
     this.companyName.textContent = this.storedItem.companyName;
     this.date.textContent = this.storedItem.startDate;
+
     this.editButton.textContent = "EDIT";
     this.editButton.classList.add("edit-button");
     this.deleteButton.textContent = "DELETE";
-
     this.deleteButton.classList.add("delete-button");
+
     this.editTd.appendChild(this.editButton);
     this.deleteTd.appendChild(this.deleteButton);
 
@@ -37,6 +40,7 @@ class ListItem {
 
     this.deleteItem(this.deleteButton, this.aNewRow, this.index, this.localStorageHandler);
   }
+
   deleteItem(deleteButton, aNewRow, index, localStorageHandler) {
     deleteButton.addEventListener("click", function () {
       if (confirm("Are you sure that you want to delete this event?")) {
