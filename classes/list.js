@@ -4,9 +4,11 @@ class List {
       new ListItem(i);
     }
   }
-  removeAllChildren(element) {
-    while (element.firstChild) {
-      element.removeChild(element.firstChild);
+
+  removeChildren(children) {
+    for (let i = 0; i < children.length; i++) {
+      console.log("hejsan");
+      children[i].remove();
     }
   }
 }
