@@ -42,13 +42,14 @@ function listFilteredEvents(events, filterCategory, startDate, endDate){
 }
 
 //Listar alla event
-function listAllEvents(events){
+function listAllEvents(events, startDate, endDate){
     
     let eventListGrid = document.getElementById("event-list-grid") 
     eventListGrid.innerHTML=""
     
     
     for(let current of events){
+            
             let eventListItem = document.createElement("div")
             let eventListDate = document.createElement("div")
             let eventListDateP = document.createElement("p")
@@ -94,3 +95,4 @@ function sortArrayBy(array, sort, desc){
     return array.reverse()
 }
 
+//hej
