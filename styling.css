@@ -36,9 +36,17 @@
   background-color: #7681b3;
   margin-left: auto;
 }
+
+.main-header-navbar-left-buttons {
+  display: flex;
+  position: relative;
+  /*Im here*/
+  
+}
 .main-header-navbar a:hover {
   background-color: #7681b3;
   transition: 0.3s;
+  /*Im here*/
 }
 .main-header-navbar a {
   background-color: transparent;
@@ -47,8 +55,21 @@
   width: 115.07px;
   height: 47px;
   transition: 0.3s;
+  /*Im here*/
 }
-
+.main-header-navbar-right-buttons a {
+  background-color: #7681b3;
+  border-style: none;
+  border-radius: 50px;
+  width: 115.07px;
+  height: 47px;
+  /*Im here*/
+}
+.main-header-navbar-left-buttons-nav {
+  display: flex;
+  align-items: center;
+  /*Im here*/
+}
 #banner-body {
   color: white;
   display: flex;
