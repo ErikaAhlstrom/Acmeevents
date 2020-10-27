@@ -7,8 +7,7 @@ class List {
 
   removeChildren(children) {
     for (let i = 0; i < children.length; i++) {
-      console.log("hejsan");
-      children[i].remove();
+      children[i].parentNode.removeChild(children[i]);
     }
   }
 }

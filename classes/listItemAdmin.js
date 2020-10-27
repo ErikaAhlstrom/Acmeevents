@@ -50,11 +50,11 @@ class ListItem {
       if (confirm("Are you sure that you want to delete this event?")) {
         let storageArray = localStorageHandler.getStoredArray();
         localStorageHandler.removeStoredArray();
-        let children = document.getElementsByClassName("child");
+        let children = document.querySelectorAll(".child");
+        list.removeChildren(children);
         storageArray.splice(index, 1);
         localStorageHandler.storeArray(storageArray);
-        list.removeChildren(children);
-        //list.listOutput(localStorageHandler);
+        list.listOutput(localStorageHandler);
       }
     });
   }
