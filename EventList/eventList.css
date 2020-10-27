@@ -222,32 +222,88 @@ select {
     grid-column: 2/11;
     background-color: #D9F0FF;
     color: #5E5E5E;
-}
-.list-item-open{
-    border-radius: 25px;
+
 }
 
-.list-item-open :nth-child(1) {
-    padding: 15px;
-    justify-content: start;
-    display: flex;
-    flex-direction: column;
-
-} 
-.list-item-open :nth-child(2) {
-    justify-content: start;
-    flex-direction: column;
-
-
-} 
-
-.list-item-open :nth-child(2) h4 {
+/*====================================================================
+                            OPEN CARD
+====================================================================*/
+.list-item-open {
+    display: grid;
+    grid-template-columns: 50% 50%;
     width: 100%;
-    padding: 10px 0px;
-
+    height: 100%;
 }
 
+.open-left-column {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;  
+    width: 100%;
+} 
+.open-right-column {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    margin-left: 10%;
 
+} 
+
+ .open-main-header {
+    margin-bottom: 10px;
+  }
+
+.open-about-header{
+  margin-bottom: 10px;
+}
+
+.open-about {
+  margin-bottom: 10px;
+  overflow: scroll;
+  
+}
+
+.detail-paragraphs {
+
+} 
+
+.detail-send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: right;
+  border-radius: 20px;
+  color: white;
+  height: 30px;
+  width: 70px;
+  padding: 10px 20px;
+  background-color: #7681b3;
+  border-style: none;
+  cursor: pointer;
+}
+
+.detail-img {  
+  height: 200px;
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+}
+
+.detail-guest-header {
+  margin-bottom: 10px;
+}
+
+.detail-guest-text {
+  border: none;
+  background-color: rgb(255, 255, 255);
+  resize: none;
+  margin-top: 2%;
+  font-size: 1.2em;
+  height: 200px;
+  width: 400px;
+  margin-bottom: 10px;
+
+}
 
 /*====================================================================
                             FOOTER
@@ -405,3 +461,6 @@ select {
     color: #1da1f2;
   }
  
+  .hidden {
+    display: none;
+  }
