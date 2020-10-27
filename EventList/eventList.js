@@ -1,4 +1,4 @@
-let myArr = JSON.parse(localStorage.getItem("storageArray"))
+/* let myArr = JSON.parse(localStorage.getItem("storageArray"))
 
 listAllEvents(myArr)
 
@@ -40,8 +40,8 @@ function listFilteredEvents(events, filterCategory, startDate, endDate){
     }
 
 }
-
 //Listar alla event
+
 function listAllEvents(events, startDate, endDate){
     
     let eventListGrid = document.getElementById("event-list-grid") 
@@ -96,3 +96,4 @@ function sortArrayBy(array, sort, desc){
 }
 
 //hej
+ */
