@@ -20,6 +20,8 @@
   padding: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  /*I am here*/
 }
 .main-header-navbar a{
   display: flex;
@@ -35,6 +37,7 @@
 .main-header-navbar a:nth-child(5){
   background-color: #7681b3;
   margin-left: auto;
+  /*I am here*/
 }
 
 .main-header-navbar-left-buttons {
@@ -76,7 +79,16 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  height:515px;
+  height: 515px;
+  /*I am here*/
+}
+#banner-body-content {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 433px;
+  /*I am here*/
 }
 
 #banner-body h1 {
@@ -85,6 +97,7 @@
   font-size: 48px;
   line-height: 55px;
   margin-bottom: 26px;
+  /*I am here*/
 }
 #banner-body p {
   font-style: normal;
@@ -93,6 +106,7 @@
   line-height: 16px;
   text-align: center;
   margin-bottom: 50px;
+  /*I am here*/
 }
 
 #banner-body a {
@@ -107,6 +121,7 @@
   border-radius: 309px;
   font-size: 20px;
   line-height: 23px;
+  /*I am here*/
 }
 .card-container div {
   width: 700px;
