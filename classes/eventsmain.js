@@ -1,5 +1,14 @@
-class Events {
+class EventsMain {
   constructor() {
+    this.localStorageHandler = new LocalStorageHandler();
+    this.eventsArray = this.localStorageHandler.getStoredArray();
+    this.frontpageEventsArray = [];
+    this.findFrontpageEvents();
+    this.printFrontpageEvents();
+    //this.getEventList();
+    console.log(this.localStorageHandler.getStoredArray());
+
+
     this.eventArrayHardCode = [
       {
         category: "Lunch",
@@ -50,26 +59,14 @@ class Events {
         frontpage: true
       },
     ];
-    this.eventArray = []
-    this.frontpageEventsArray = [];
-    this.findFrontpageEvents();
-    this.printFrontpageEvents();
-  }
-
-  createEvent(inputObject) {
-    this.eventArray.push(inputObject);
-  }
-  store() {
-    localStorage.removeItem("eventArray");
-    localStorage.setItem(JSON.stringify(eventArray));
   }
 
   // Skapar array med alla event som ska ligga på framsidan. 
   // Tar bort första om mer än 6.
   findFrontpageEvents() {
-    for(let i = 0; i < this.eventArrayHardCode.length; i++) {
-      if(this.eventArrayHardCode[i].frontpage) {
-        this.frontpageEventsArray.push(this.eventArrayHardCode[i])
+    for(let i = 0; i < this.eventsArray.length; i++) {
+      if(this.eventsArray[i].frontPage) {
+        this.frontpageEventsArray.push(this.eventsArray[i])
       }
 
       if(this.frontpageEventsArray.length >= 7) {
@@ -78,33 +75,35 @@ class Events {
     }
     console.log(this.frontpageEventsArray);
   }
+  
   // skriver ut rätt event på första sidan. Just nu tar den värden från hårdkodade event.
   printFrontpageEvents() {
-    let companyNameP = document.querySelectorAll('.card-company-name');
-    let categoryP = document.querySelectorAll('.card-category');
-    let dateP = document.querySelectorAll('.card-date');
-
+    let companyNameP = document.getElementsByClassName('card-company-name');
+    let categoryP = document.getElementsByClassName('card-category');
+    let dateP = document.getElementsByClassName('card-date');
+    console.log(companyNameP[1].innerText);
     for(let i = 0; i <= 6; i++){
-      companyNameP[i].textContent = this.eventArrayHardCode[i].company;
-      categoryP[i].textContent = this.eventArrayHardCode[i].category;
-      dateP[i].textContent = this.eventArrayHardCode[i].date;
+      companyNameP[i].innerText = this.eventsArray[i].companyName;
+      categoryP[i].innerText = this.eventsArray[i].category;
+      dateP[i].innerText = this.eventsArray[i].startDate;
 
     }
  
-  }    
+  }     
 
 }
 
 
-/* ============MAIN============== */
-
-
-
-window.addEventListener('DOMContentLoaded', (event) => {
-  console.log('DOM fully loaded and parsed');
-  let events = new Events()
-});
 
 
 
 
+
+
+/*   createEvent(inputObject) {
+    this.eventArray.push(inputObject);
+  }
+  store() {
+    localStorage.removeItem("eventArray");
+    localStorage.setItem(JSON.stringify(eventArray));
+  } */
