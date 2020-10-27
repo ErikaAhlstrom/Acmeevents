@@ -1,6 +1,8 @@
-/* let myArr = JSON.parse(localStorage.getItem("storageArray"))
+let myArr = JSON.parse(localStorage.getItem("storageArray"))
+let startDate = document.getElementById("startDate")
+let endDate = document.getElementById("endDate")
 
-listAllEvents(myArr)
+listAllEvents(myArr, startDate, endDate)
 
 //Listar filtrerade event alla Event
 function listFilteredEvents(events, filterCategory, startDate, endDate){
@@ -77,8 +79,7 @@ let desc = false;
 let click = document.getElementById("filter-button").addEventListener("click", function(e){
     let array = sortArrayBy(myArr, "startDate", desc);
     let filterCategory = document.getElementById("category")
-    let startDate = document.getElementById("startDate")
-    let endDate = document.getElementById("endDate")
+
 
     listFilteredEvents(array, filterCategory.value, startDate.value, endDate.value)
     //desc =!desc
@@ -96,4 +97,3 @@ function sortArrayBy(array, sort, desc){
 }
 
 //hej
- */
