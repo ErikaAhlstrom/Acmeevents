@@ -42,25 +42,19 @@ class ListItem {
 
     this.eventTable.appendChild(this.aNewRow);
 
-    this.deleteItem(
-      this.deleteButton,
-      this.index,
-      this.localStorageHandler,
-      this.list,
-      this.eventTable
-    );
+    this.deleteItem(this.deleteButton, this.index, this.localStorageHandler, this.list);
   }
 
-  deleteItem(deleteButton, index, localStorageHandler, list, eventTable) {
+  deleteItem(deleteButton, index, localStorageHandler, list) {
     deleteButton.addEventListener("click", function () {
       if (confirm("Are you sure that you want to delete this event?")) {
-        let children = document.getElementsByClassName("child");
         let storageArray = localStorageHandler.getStoredArray();
         localStorageHandler.removeStoredArray();
+        let children = document.getElementsByClassName("child");
         storageArray.splice(index, 1);
         localStorageHandler.storeArray(storageArray);
-        console.log(children);
-        list.listOutput();
+        list.removeChildren(children);
+        //list.listOutput(localStorageHandler);
       }
     });
   }

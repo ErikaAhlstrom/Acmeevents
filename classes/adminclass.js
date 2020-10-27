@@ -84,10 +84,4 @@ class Admin {
       alert("The Event has been saved");
     });
   }
-  /*
-  listOutput(localStorageHandler) {
-    for (let i = 0; i < localStorageHandler.getStoredArray().length; i++) {
-      new ListItem(i);
-    }
-  }*/
 }
