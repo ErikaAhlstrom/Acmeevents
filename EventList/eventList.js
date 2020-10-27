@@ -1,65 +1,17 @@
+let myArr = JSON.parse(localStorage.getItem("storageArray"))
 
-let eventItems =[
-    {
-        category: "conference",
-        date: "8/13-20",
-        correctDate:new Date(2020,13,8),
-        indexDate: "20200813",
-        info: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam eveniet enim dolores asperiores illum rem numquam optio deserunt provident consequatur,"
-        
-    },
-    {
-        category: "breakfast",
-        date: "10/13-20",
-        correctDate:new Date(2020,13,10),
-        indexDate: "20201013",
-        info: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam eveniet enim dolores asperiores illum rem numquam optio deserunt provident consequatur,"
-        
-    },
-    {
-        category: "lunch",
-        date: "10/26-20",
-        correctDate:new Date(2020,26,10),
-        indexDate: "20201026",
-        info: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam eveniet enim dolores asperiores illum rem numquam optio deserunt provident consequatur,"
-        
-    },
-    {
-        category: "conference",
-        date: "4/13-20",
-        correctDate:new Date(2020,13,4),
-        indexDate: "20200413",
-        info: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam eveniet enim dolores asperiores illum rem numquam optio deserunt provident consequatur,"
-        
-    },
-    {
-        category: "breakfast",
-        date: "9/2-20",
-        correctDate:new Date(2020,9,2),
-        indexDate: "20200902",
-        info: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam eveniet enim dolores asperiores illum rem numquam optio deserunt provident consequatur,"
-        
-    },
-    {
-        category: "lunch",
-        date: "9/11-20",
-        correctDate:new Date(2020,11,9),
-        indexDate: "20200911",
-        info: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam eveniet enim dolores asperiores illum rem numquam optio deserunt provident consequatur,"
-        
-    },
-    
-]
-listAllEvents(eventItems)
+listAllEvents(myArr)
 
-//Listar alla Event
-function listFilteredEvents(events, filterCategory){
+//Listar filtrerade event alla Event
+function listFilteredEvents(events, filterCategory, startDate, endDate){
     let eventListGrid = document.getElementById("event-list-grid") 
     eventListGrid.innerHTML=""
 
+
     if(filterCategory != "All"){
+        
         for(let current of events){
-            if(current.category == filterCategory){
+            if(current.category == filterCategory && startDate <= current.startDate && endDate >= current.startDate ){
                 let eventListItem = document.createElement("div")
                 let eventListDate = document.createElement("div")
                 let eventListDateP = document.createElement("p")
@@ -77,21 +29,25 @@ function listFilteredEvents(events, filterCategory){
                 eventListItem.appendChild(eventListName)
                 eventListName.appendChild(eventListNameH4)
                 eventListName.appendChild(eventListNameP)
-                eventListDateP.innerHTML= current.date
+                eventListDateP.innerHTML= current.startDate
                 eventListNameH4.innerHTML = current.category
             }
         }
 
     }
     else{
-        listAllEvents(eventItems)
+        listAllEvents(myArr)
     }
 
 }
+
+//Listar alla event
 function listAllEvents(events){
+    
     let eventListGrid = document.getElementById("event-list-grid") 
     eventListGrid.innerHTML=""
-
+    
+    
     for(let current of events){
             let eventListItem = document.createElement("div")
             let eventListDate = document.createElement("div")
@@ -111,18 +67,20 @@ function listAllEvents(events){
             eventListName.appendChild(eventListNameH4)
             eventListName.appendChild(eventListNameP)
         
-            eventListDateP.innerHTML= current.date
+            eventListDateP.innerHTML= current.startDate
             eventListNameH4.innerHTML = current.category
     }
 }
 
 let desc = false; 
 let click = document.getElementById("filter-button").addEventListener("click", function(e){
-    let array = sortArrayBy(eventItems, "indexDate", desc);
+    let array = sortArrayBy(myArr, "startDate", desc);
     let filterCategory = document.getElementById("category")
+    let startDate = document.getElementById("startDate")
+    let endDate = document.getElementById("endDate")
 
-    listFilteredEvents(array, filterCategory.value)
-    desc =!desc
+    listFilteredEvents(array, filterCategory.value, startDate.value, endDate.value)
+    //desc =!desc
 })
 
 function sortArrayBy(array, sort, desc){
@@ -131,16 +89,8 @@ function sortArrayBy(array, sort, desc){
         if (a[sort] <b[sort]) return -1;
         return 0; 
     })
-    if (desc) array.reverse();
+    //if (desc) array.reverse();
     
-    return array
+    return array.reverse()
 }
 
-function date(){
-    for(let current of eventItems ){
-        //let d = new Date(current.correctDate)
-        //console.log(d)
-    }
-}
-
-date()
