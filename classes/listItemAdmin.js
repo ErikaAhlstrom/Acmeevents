@@ -1,7 +1,9 @@
 class ListItem {
   constructor(index) {
     this.localStorageHandler = new LocalStorageHandler();
+    this.list = new List();
     this.eventTable = document.getElementById("event-table");
+
     this.aNewRow = document.createElement("tr");
     this.eventNumber = document.createElement("td");
     this.eventCategory = document.createElement("td");
@@ -36,19 +38,29 @@ class ListItem {
     this.aNewRow.appendChild(this.editTd);
     this.aNewRow.appendChild(this.deleteTd);
 
+    this.aNewRow.classList.add("child");
+
     this.eventTable.appendChild(this.aNewRow);
 
-    this.deleteItem(this.deleteButton, this.aNewRow, this.index, this.localStorageHandler);
+    this.deleteItem(
+      this.deleteButton,
+      this.index,
+      this.localStorageHandler,
+      this.list,
+      this.eventTable
+    );
   }
 
-  deleteItem(deleteButton, aNewRow, index, localStorageHandler) {
+  deleteItem(deleteButton, index, localStorageHandler, list, eventTable) {
     deleteButton.addEventListener("click", function () {
       if (confirm("Are you sure that you want to delete this event?")) {
+        let children = document.getElementsByClassName("child");
         let storageArray = localStorageHandler.getStoredArray();
         localStorageHandler.removeStoredArray();
         storageArray.splice(index, 1);
         localStorageHandler.storeArray(storageArray);
-        aNewRow.remove();
+        console.log(children);
+        list.listOutput();
       }
     });
   }
