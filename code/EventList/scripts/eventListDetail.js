@@ -26,7 +26,7 @@ class EventListDetails {
         for(let i = 0; i < this.eventListItems.length; i++) {
 
             if(this.eventListItems[i].classList.contains("open")) {
-                // Ta bort current nodes
+            //Ta bort current nodes
             let eventListName = document.getElementsByClassName("event-list-name");
             eventListName[i].firstChild.classList.add("hidden");
 
