@@ -7,6 +7,7 @@ class Admin {
     this.goToAddEventPage(this.dom);
     this.leaveAddEventPage(this.dom, this.localStorageHandler, this.list);
     this.saveEvent(this.dom, this.localStorageHandler);
+    this.leaveEditEventPage(this.dom);
   }
   // when admin signs in the array of eventobjects are displayed as a list
   signIn(dom, localStorageHandler, list) {
@@ -57,7 +58,6 @@ class Admin {
       if (!storageArray) {
         storageArray = [];
       }
-
       storageArray.push(
         new Event(
           dom.eventArray[0].checked, //front-page-check
@@ -82,6 +82,17 @@ class Admin {
         dom.eventArray[i].value = "";
       }
       alert("The Event has been saved");
+    });
+  }
+  leaveEditEventPage(dom) {
+    dom.editCancelButton.addEventListener("click", function () {
+      dom.editEventPage.classList.add("hidden");
+      dom.eventListPage.classList.remove("hidden");
+
+      for (let i = 1; i < dom.eventArrayEdit.length; i++) {
+        dom.eventArrayEdit[i] = "";
+      }
+      dom.eventArrayEdit[0].checked = false;
     });
   }
 }

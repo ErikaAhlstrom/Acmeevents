@@ -5,7 +5,8 @@ class List {
     }
   }
 
-  removeChildren(children) {
+  removeChildren() {
+    let children = document.querySelectorAll(".child");
     for (let i = 0; i < children.length; i++) {
       children[i].parentNode.removeChild(children[i]);
     }
