@@ -1,101 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="/code/EventList/eventList.css">
-    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet"> 
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/code/EventList/eventList.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet" />
+
     <title>Event List</title>
-
-</head>
-    <div id="banner">
-        
-        <header id="main-header">
-            <div class="main-header-navbar">
-                <div class="main-header-navbar-left-buttons">
-                <img src="/Assets/Logo/Logo.png" alt="" id="logo">
-                <div class="main-header-navbar-left-buttons-nav">
-                    <a href="/code/about/about.html" id="about-button">About Acme</a>
-                    <a href="/code/EventList/eventList.html" id="event-button">Event</a>
-                    <a href="/code/MainPage/index.html" id="home-button">Home</a>
-                </div>
-            </div>
-            <div class="main-header-navbar-right-buttons">
-                <a href="admin/admin.html" id="login-button">Login</a>
-            </div>
+  </head>
+  <div id="banner">
+    <header id="main-header">
+      <div class="main-header-navbar">
+        <div class="main-header-navbar-left-buttons">
+          <img src="/Assets/Logo/Logo.png" alt="" id="logo" />
+          <div class="main-header-navbar-left-buttons-nav">
+            <a href="/code/about/about.html" id="about-button">About Acme</a>
+            <a href="/code/EventList/eventList.html" id="event-button">Event</a>
+            <a href="/code/MainPage/index.html" id="home-button">Home</a>
+          </div>
         </div>
-        </header>
-        <div id="banner-body">
-            <div id="banner-body-content">
-            
-            </div>
+        <div class="main-header-navbar-right-buttons">
+          <a href="/code/admin/admin.html" id="login-button">Login</a>
         </div>
+      </div>
+    </header>
+    <div id="banner-body">
+      <div id="banner-body-content"></div>
     </div>
-    <div id="filter-menu">
-        
-            <form>
-                <span>Filter</span>
-                <div class="label-input-divs">
-                     <div>
-                        <label for="start">Start</label>
-                        <input id="startDate" name="start" class="date date-start" type="date">
-                        
-                    </div> 
-                    <div> 
-                        <label for="end">End</label>
-                        <input id="endDate" name="end"class="date date-end" type="date">
-                    </div>   
-                    <div>
-                        <label for="category">Category</label>
-                        <select id="category" name="category">
-                            <option value="All">All</option>
-                            <option value="conference">Conference</option>
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-
-                        </select>
-                    </div> 
-                </div>
-            </form>
-        
-    </div>
-
-    <div id="event-list-grid">
-        <div class="event-list-item list-item-open">
-            <div class="event-list-date"><p>10</p>/<p>25</p>-<p>20</p></div>
-            <div class="event-list-name">
-                <h4>Business Lunch, ABB</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                    adipisicing elit. Debitis aperiam eveniet enim 
-                    dolores asperiores illum rem numquam optio 
-                    deserunt provident consequatur, ut facilis 
-                    eligendi minima iste unde doloribus adipisci. 
-                  
-                </p>
-            </div>
+  </div>
+  <div id="filter-menu">
+    <form>
+      <span>Filter</span>
+      <div class="label-input-divs">
+        <div>
+          <label for="start">Start</label>
+          <input id="startDate" name="start" class="date date-start" type="date" />
         </div>
-    </div>
-    <input type="button" id="filter-button" value="Sort">
+        <div>
+          <label for="end">End</label>
+          <input id="endDate" name="end" class="date date-end" type="date" />
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="All">All</option>
+            <option value="conference">Conference</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
 
-    <footer>
+  <div id="event-list-grid">
+    <div class="event-list-item list-item-open">
+      <div class="event-list-date">
+        <p>10</p>
+        /
+        <p>25</p>
+        -
+        <p>20</p>
+      </div>
+      <div class="event-list-name">
+        <h4>Business Lunch, ABB</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aperiam eveniet enim
+          dolores asperiores illum rem numquam optio deserunt provident consequatur, ut facilis
+          eligendi minima iste unde doloribus adipisci.
+        </p>
+      </div>
+    </div>
+  </div>
+  <input type="button" id="filter-button" value="Sort" />
+
+  <footer>
     <div class="main-footer">
-      <div id="main-footer-1" >
+      <div id="main-footer-1">
         <h2>Adress</h2>
-        <p>Acme  Event</p>
-        <p>89 Shirley Ave.<br>Romulus, MI 48174</p>
+        <p>Acme Event</p>
+        <p>89 Shirley Ave.<br />Romulus, MI 48174</p>
       </div>
       <div id="main-footer-2">
         <h2>Subscribe for the latest news</h2>
         <p>Get the latest news and discount directly to your Email</p>
-        <input type="text" placeholder="Email"><br>
+        <input type="text" placeholder="Email" /><br />
         <button>Subscribe</button>
-        
       </div>
-      <div id="main-footer-3" >
+      <div id="main-footer-3">
         <h2>Contact</h2>
-        <p>+1-202-555-0145 </p>
+        <p>+1-202-555-0145</p>
         <p>Info@AcmeEvents.com</p>
       </div>
     </div>
@@ -103,14 +98,12 @@
       <i class="fab fa-facebook-f"></i>
       <i class="fab fa-instagram"></i>
       <i class="fab fa-twitter"></i>
-  </div>
+    </div>
   </footer>
-<body>
+  <body>
     <script src="/code/EventList/scripts/eventList.js"></script>
     <script src="/code/globalClasses/localstoragehandler.js"></script>
     <script src="/code/EventList/scripts/eventListDetail.js"></script>
     <script src="/code/EventList/scripts/EventListMain.js"></script>
-
-
-</body>
+  </body>
 </html>
