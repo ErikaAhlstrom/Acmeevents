@@ -1,6 +1,6 @@
 class Admin {
   constructor() {
-    this.dom = new adminDOM();
+    this.dom = new AdminDOM();
     this.localStorageHandler = new LocalStorageHandler();
     this.list = new List();
     this.signIn(this.dom, this.localStorageHandler, this.list);
