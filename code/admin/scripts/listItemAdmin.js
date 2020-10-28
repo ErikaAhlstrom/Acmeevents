@@ -44,8 +44,6 @@ class ListItem {
     this.eventTable.appendChild(this.aNewRow);
 
     this.deleteItem(this.deleteButton, this.index, this.localStorageHandler, this.list);
-    this.editItem(this.dom, this.editButton, this.storedItem);
-    this.saveEditedItem(this.dom, this.storedItem, this.localStorageHandler, this.index, this.list);
   }
 
   deleteItem(deleteButton, index, localStorageHandler, list) {
@@ -58,55 +56,6 @@ class ListItem {
         localStorageHandler.storeArray(storageArray);
         list.listOutput(localStorageHandler);
       }
-    });
-  }
-  editItem(dom, editButton, storedItem) {
-    editButton.addEventListener("click", function () {
-      dom.eventListPage.classList.add("hidden");
-      dom.editEventPage.classList.remove("hidden");
-
-      let editInputsArray = dom.eventArrayEdit;
-
-      editInputsArray[0].checked = storedItem.frontPage;
-      editInputsArray[1].value = storedItem.category;
-      editInputsArray[2].value = storedItem.companyName;
-      editInputsArray[3].value = storedItem.startTime;
-      editInputsArray[4].value = storedItem.endTime;
-      editInputsArray[5].value = storedItem.startDate;
-      editInputsArray[6].value = storedItem.endDate;
-      editInputsArray[7].value = storedItem.location;
-      editInputsArray[8].value = storedItem.participants;
-      editInputsArray[9].value = storedItem.admin;
-      editInputsArray[10].value = storedItem.eventManager;
-      editInputsArray[11].value = storedItem.infoText;
-    });
-  }
-  saveEditedItem(dom, storedItem, localStorageHandler, index, list) {
-    dom.editSaveButton.addEventListener("click", function () {
-      let editInputsArray = dom.eventArrayEdit;
-      storedItem.frontPage = editInputsArray[0];
-      storedItem.category = editInputsArray[1].value;
-      storedItem.companyName = editInputsArray[2].value;
-      storedItem.startTime = editInputsArray[3].value;
-      storedItem.endTime = editInputsArray[4].value;
-      storedItem.startDate = editInputsArray[5].value;
-      storedItem.endDate = editInputsArray[6].value;
-      storedItem.location = editInputsArray[7].value;
-      storedItem.participants = editInputsArray[8].value;
-      storedItem.admin = editInputsArray[9].value;
-      storedItem.eventManager = editInputsArray[10].value;
-      storedItem.infoText = editInputsArray[11].value;
-
-      let arrayToChange = localStorageHandler.getStoredArray();
-      localStorageHandler.removeStoredArray();
-      arrayToChange.splice(index, 1, storedItem);
-      localStorageHandler.storeArray(arrayToChange);
-      alert("Changes saved");
-      list.removeChildren();
-      list.listOutput(localStorageHandler);
-
-      dom.editEventPage.classList.add("hidden");
-      dom.eventListPage.classList.remove("hidden");
     });
   }
 }
