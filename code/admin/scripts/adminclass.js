@@ -2,6 +2,7 @@ class Admin {
   constructor() {
     this.dom = new AdminDOM();
     this.localStorageHandler = new LocalStorageHandler();
+    this.localStorageHandler.storeArray([]);
     this.list = new List();
     this.signIn(this.dom, this.localStorageHandler, this.list);
     this.eventListPageEL(this.dom, this.localStorageHandler, this.list, this.deleteEvent);
@@ -12,7 +13,7 @@ class Admin {
       this.list,
       this.localStorageHandler
     );
-    this.leaveEditEventPage(this.dom, this.list);
+    this.editEventPageEL(this.dom, this.localStorageHandler, this.list, this.leaveEditEventPage);
   }
   // when admin signs in the array of eventobjects are displayed as a list
   signIn(dom, localStorageHandler, list) {
@@ -38,14 +39,21 @@ class Admin {
         dom.eventListPage.classList.add("hidden");
         dom.addEventPage.classList.remove("hidden");
       }
-
+      //if(!localStorageHandler.getStoredArray())
       for (let i = 0; i < localStorageHandler.getStoredArray().length; i++) {
         if (e.target === document.getElementById(`delete${i}`)) {
           deleteEvent(localStorageHandler, list, i);
         }
         if (e.target === document.getElementById(`edit${i}`)) {
+          let storedItemValues = Object.values(localStorageHandler.getStoredArray()[i]);
+
+          dom.editSaveButton.classList.add(`edit-save-button${i}`);
+          dom.eventArrayEdit[0].checked = storedItemValues[0];
+          for (let j = 1; j < storedItemValues.length; j++) {
+            dom.eventArrayEdit[j].value = storedItemValues[j];
+          }
           dom.eventListPage.classList.add("hidden");
-          dom.editEventPage.classList.add("hidden");
+          dom.editEventPage.classList.remove("hidden");
         }
       }
     });
@@ -57,6 +65,42 @@ class Admin {
         leaveAddEventPage(dom, list, localStorageHandler);
       } else if (e.target === dom.saveButton) {
         saveEvent(localStorageHandler, dom);
+      }
+    });
+  }
+
+  editEventPageEL(dom, localStorageHandler, list, leaveEditEventPage) {
+    dom.editEventPage.addEventListener("click", function (e) {
+      for (let i = 0; i < localStorageHandler.getStoredArray().length; i++) {
+        if (e.target === document.getElementsByClassName(`edit-save-button${i}`)[0]) {
+          let saveButton = document.getElementsByClassName(`edit-save-button${i}`)[0];
+          saveButton.classList.remove(`edit-save-button${i}`);
+          let storageArray = localStorageHandler.getStoredArray();
+          localStorageHandler.removeStoredArray();
+          let storedItem = storageArray[i];
+          storedItem.frontPage = dom.eventArrayEdit[0].checked;
+          storedItem.category = dom.eventArrayEdit[1].value;
+          storedItem.companyName = dom.eventArrayEdit[2].value;
+          storedItem.startTime = dom.eventArrayEdit[3].value;
+          storedItem.endTime = dom.eventArrayEdit[4].value;
+          storedItem.startDate = dom.eventArrayEdit[5].value;
+          storedItem.endDate = dom.eventArrayEdit[6].value;
+          storedItem.location = dom.eventArrayEdit[7].value;
+          storedItem.participants = dom.eventArrayEdit[8].value;
+          storedItem.admin = dom.eventArrayEdit[9].value;
+          storedItem.eventManager = dom.eventArrayEdit[10].value;
+          storedItem.infoText = dom.eventArrayEdit[11].value;
+
+          storageArray.splice(i, 1, storedItem);
+          localStorageHandler.storeArray(storageArray);
+
+          dom.editEventPage.classList.add("hidden");
+          dom.eventListPage.classList.remove("hidden");
+          list.removeChildren();
+          list.listOutput();
+        } else if (e.target === dom.editCancelButton) {
+          leaveEditEventPage(dom, list, i);
+        }
       }
     });
   }
@@ -101,9 +145,10 @@ class Admin {
     localStorageHandler.storeArray(storageArray);
 
     for (let i = 1; i < dom.eventArray.length; i++) {
-      //excludes the first element wich is a checkbox and cant hold a empty string
+      //excludes the first element wich is a checkbox and cant hold an empty string
       dom.eventArray[i].value = "";
     }
+    dom.eventArray[0].checked = false;
     alert("The Event has been saved");
   }
 
@@ -118,15 +163,14 @@ class Admin {
     }
   }
 
-  leaveEditEventPage(dom, list) {
-    dom.editCancelButton.addEventListener("click", function () {
-      for (let i = 1; i < dom.eventArrayEdit.length; i++) {
-        dom.eventArrayEdit[i] = "";
-      }
-      dom.eventArrayEdit[0].checked = false;
-      dom.editEventPage.classList.add("hidden");
-      dom.eventListPage.classList.remove("hidden");
-      list.removeChildren();
-    });
+  leaveEditEventPage(dom, list, i) {
+    for (let i = 1; i < dom.eventArrayEdit.length; i++) {
+      dom.eventArrayEdit[i] = "";
+    }
+    dom.eventArrayEdit[0].checked = false;
+    dom.editEventPage.classList.add("hidden");
+    dom.eventListPage.classList.remove("hidden");
+    let saveButton = document.getElementsByClassName(`edit-save-button${i}`)[0];
+    saveButton.classList.remove(`edit-save-button${i}`);
   }
 }
