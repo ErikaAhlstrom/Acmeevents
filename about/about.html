@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/a091911bcd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="about.css">
     
     <title>About</title>
 </head>
 <body>
-    <div class="body-section">
-        <div id="banner">
+    <div id="banner">
             <header id="main-header">
                 <div class="main-header-navbar">
                     <div class="main-header-navbar-left-buttons">
                     <img src="/Assets/Logo/Logo.png" alt="" id="logo">
                     <div class="main-header-navbar-left-buttons-nav">
                         <a id="about-button">About Acme</a>
-                        <a href="/EventList/eventList.html" id="event-button">Event</button>
+                        <a href="/EventList/eventList.html" id="event-button">Event</a>
                         <a href="/index.html" id="home-button">Home</a>
                     </div>
                 </div>
@@ -32,41 +32,88 @@
                 </div>
             </div>
         </div>
+       <!-- <div class="nav"> den nya responsiva menyn 
+            <img src="/Assets/Logo/Logo.png" alt="" id="logo">
+            <label for="toggle">&#9776;</label>
+            <input type="checkbox" id="toggle"/>
+            <div class="menu">             
+                <div class="nav-left"> 
+                    <a href="/about/about.html">Aount acme</a>
+                    <a href="/EventList/eventList.html">Event</a>
+                    <a href="/index.html">Home</a>
+                </div>
+                <div class="main-header-navbar-right-buttons">
+                    <a id="login-button">Login</a>
+                </div>
+            </div>
+        </div>-->
         <div class="row">
             <div id="about-section">
-                <h2>About Scrum</h2>
+                <h2>About Acme</h2>
+                <hr>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo omnis deserunt voluptatibus doloribus cum quibusdam, perspiciatis rem quas laudantium temporibus fuga totam tenetur? Saepe odit unde mollitia deserunt, totam temporibus ut minus exercitationem. Necessitatibus dignissimos incidunt, eaque id enim facere. Ad consequuntur esse maiores! Expedita eum repellat voluptatum, cupiditate iure atque quibusdam! Debitis explicabo magni quidem cupiditate omnis similique aut nisi, eveniet, eligendi mollitia quod impedit? Praesentium aliquam cumque sapiente inventore fugit commodi minus. Laborum cupiditate fugiat excepturi eveniet temporibus, repellendus voluptate non ipsum ut tenetur laudantium, rerum ab maxime perferendis nihil! Et eos repellendus excepturi dolorum architecto ad repudiandae est eligendi suscipit veniam, cum, possimus quasi soluta id cumque doloremque eum iste laborum nam repellat reprehenderit accusamus! Similique delectus laudantium velit amet corrupti sunt! Nemo voluptate excepturi modi iste fugit dolor possimus molestias harum fuga pariatur amet consequatur laboriosam placeat praesentium, in quod sed ipsum? Eum minima laboriosam, rem nesciunt natus ea! Optio asperiores sint corporis ipsum culpa eos qui earum dolore reprehenderit tempora, quasi, officiis assumenda voluptatibus iusto! Illum ab maiores iusto eum ea recusandae praesentium! Assumenda exercitationem laborum laudantium esse corporis temporibus odio nemo quo quidem a vitae fuga in itaque ipsa, tempore, repellendus ea ratione nulla?</p>
+                <h3>Scrum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo omnis deserunt voluptatibus doloribus cum quibusdam, perspiciatis rem quas laudantium temporibus fuga totam tenetur? Saepe odit unde mollitia deserunt, totam temporibus ut minus exercitationem. Necessitatibus dignissimos incidunt, eaque id enim facere. Ad consequuntur esse maiores! Expedita eum repellat voluptatum, cupiditate iure atque quibusdam!</p>
             </div>
             <div id="team-section">
                 <h2>Acme Team</h2>
+                <hr>
                 <div class="column-4">
                     <img>
+                    <h3>Antonio</h3>
+                    <p>Marketing Manager</p>
                 </div>
                 <div class="column-4">
                     <img>
+                    <h3>Mathilde</h3>
+                    <p>Event manager</p>
                 </div>
                 <div class="column-4">
                     <img>
+                    <h3>Georgios</h3>
+                    <p>CEO</p>
                 </div>
                 <div class="column-4">
                     <img>
+                    <h3>Sebastian</h3>
+                    <p>Product Manager</p>
                 </div>
             </div>
             <div id="adress-section">
                 <h2>Find us</h2>
-                <div class="column-2">
-                    <h1>Contact info</h1>
-                    <p>Telefon: XXX XX XX XX</p>
-                    <p>Epost: info@XXXXX.com</p>
-                    <p>Adress: XXX-XXX</p>
-                </div>
-                <div class="column-2">
-                    <h1>Google Maps</h1>
+                <hr>
+                <div class="column">
+                        <div class="gmap_canvas">
+                            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=nackakdemin&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        </div>
                 </div>
             </div>
         </div>
-
-        <div></div>
-    </div>
+        <footer>
+            <div class="main-footer">
+              <div id="main-footer-1" >
+                <h2>Adress</h2>
+                <p>Acme  Event</p>
+                <p>89 Shirley Ave.<br>Romulus, MI 48174</p>
+              </div>
+              <div id="main-footer-2">
+                <h2>Subscribe for the latest news</h2>
+                <p>Get the latest news and discount directly to your Email</p>
+                <input type="text" placeholder="Email"><br>
+                <button>Subscribe</button>
+                
+              </div>
+              <div id="main-footer-3" >
+                <h2>Contact</h2>
+                <p>+1-202-555-0145 </p>
+                <p>Info@AcmeEvents.com</p>
+              </div>
+            </div>
+            <div class="icons">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+          </div>
+          </footer>
 </body>
 </html>
