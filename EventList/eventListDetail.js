@@ -3,8 +3,7 @@ class EventListDetails {
     constructor() {        
         this.eventListItems = Array.from(document.getElementsByClassName("event-list-item"));  
         this.eventListItemsOpen;
-        this.trackOpenCards();
-   
+        this.trackOpenCards();   
     }
 
     trackOpenCards() {
@@ -120,5 +119,5 @@ class EventListDetails {
     }
 }
 
-let eventListDetails = new EventListDetails();
+
 

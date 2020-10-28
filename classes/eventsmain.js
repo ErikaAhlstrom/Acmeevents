@@ -26,14 +26,18 @@ class EventsMain {
 
   // skriver ut rätt event på första sidan. Just nu tar den värden från hårdkodade event.
   printFrontpageEvents() {
+    
     let companyNameP = Array.from(document.getElementsByClassName("card-company-name"));
+    console.log(companyNameP);
     let categoryP = Array.from(document.getElementsByClassName("card-category"));
     let dateP = Array.from(document.getElementsByClassName("card-date"));
 
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i < this.frontpageEventsArray.length; i++) {
       companyNameP[i].innerText = this.frontpageEventsArray[i].companyName;
       categoryP[i].innerText = this.frontpageEventsArray[i].category;
       dateP[i].innerText = this.frontpageEventsArray[i].startDate;
     }
   }
 }
+
+
