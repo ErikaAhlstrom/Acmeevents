@@ -1,6 +1,6 @@
 
 
-console.log(new Date().toISOString().substring(0, 10))
+//console.log(new Date().toISOString().substring(0, 10))
 
 class itemLister{
     constructor(){
@@ -13,6 +13,7 @@ class itemLister{
         this.filterStartDate.value = ""
         this.filterEndDate.value=""
         this.listEvents(this.myArr)
+        this.globalArr; 
 
     }
     
@@ -146,7 +147,8 @@ let itemObj = new itemLister()
 
 let click = document.getElementById("filter-button").addEventListener("click", function(e){
     let array = itemObj.sortArrayBy(itemObj.myArr, "startDate");
-    
+    itemObj.globalArr = array
+    console.log(itemObj.globalArr)
     itemObj.listallEvents(itemObj.myArr)
     //itemObj.listFilteredEvents(array, filterCategory.value, startDate.value, endDate.value)
 })
