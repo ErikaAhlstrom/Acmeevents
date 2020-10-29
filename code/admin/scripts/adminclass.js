@@ -2,7 +2,6 @@ class Admin {
   constructor() {
     this.dom = new AdminDOM();
     this.localStorageHandler = new LocalStorageHandler();
-    this.localStorageHandler.storeArray([]);
     this.list = new List();
     this.signIn(this.dom, this.localStorageHandler, this.list);
     this.eventListPageEL(this.dom, this.localStorageHandler, this.list, this.deleteEvent);
@@ -39,7 +38,9 @@ class Admin {
         dom.eventListPage.classList.add("hidden");
         dom.addEventPage.classList.remove("hidden");
       }
-      //if(!localStorageHandler.getStoredArray())
+      if (!Array.isArray(localStorageHandler.getStoredArray())) {
+        localStorageHandler.storeArray([]);
+      }
       for (let i = 0; i < localStorageHandler.getStoredArray().length; i++) {
         if (e.target === document.getElementById(`delete${i}`)) {
           deleteEvent(localStorageHandler, list, i);

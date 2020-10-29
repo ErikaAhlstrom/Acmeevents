@@ -4,7 +4,10 @@
 class LocalStorageHandler {
   getStoredArray() {
     let storageArray = JSON.parse(localStorage.getItem("storageArray"));
-    return storageArray;
+    if (Array.isArray(storageArray)) {
+      return storageArray;
+    }
+    return [];
   }
   removeStoredArray() {
     localStorage.removeItem("storageArray");
