@@ -35,14 +35,11 @@ class itemLister{
     //Erikas Metoder
     trackOpenCards() {
         this.eventListItems = Array.from(document.getElementsByClassName("event-list-item")); 
-
         for (let i = 0; i < this.eventListItems.length; i++) {
-
             this.eventListItems[i].addEventListener("click", (e) => {
                 if (this.eventListItems[i].classList.contains("open")) {
                     this.removeEventListDetails(i);
                     this.eventListItems[i].classList.remove("open");
-  
                 } else {
                     this.eventListItems[i].classList.add("open");
                     this.printEventDetails();
@@ -51,6 +48,22 @@ class itemLister{
         }       
     }
 
+    listFilteredEvents(events, filterCategory, startDate, endDate){
+        let eventListGrid = document.getElementById("event-list-grid") 
+        eventListGrid.innerHTML=""
+    
+        if(filterCategory != "All"){  
+            for(let current of events){
+                if(current.category == filterCategory && startDate <= current.startDate && endDate >= current.startDate ){
+                    this.listElements(current.startDate,current.category)
+                }
+            }
+        }
+        else{
+            this.listallEvents(this.myArr)
+        }
+    
+    }
     printEventDetails() {
 
         for(let i = 0; i < this.eventListItems.length; i++) {
@@ -207,7 +220,6 @@ class itemLister{
 
   listallEvents(events) {
     this.eventListGrid.innerHTML = "";
-
     if (
       this.filterCategory.value == "All" &&
       this.filterStartDate.value >= this.filterEndDate.value
@@ -305,12 +317,9 @@ class itemLister{
         }
       }
     }
-    console.log(this.globalArr.length);
-
   }
   
-
-  sortArrayBy(array, sort, desc) {
+  sortArrayBy(array, sort) {
     array.sort(function (a, b) {
       if (a[sort] < b[sort]) return 1;
       if (a[sort] < b[sort]) return -1;
@@ -327,18 +336,15 @@ let itemObj = new itemLister();
 
 //let click = 
 document.getElementById("filter-button").addEventListener("click", function(e){
-    
+    let array = itemObj.sortArrayBy(itemObj.myArr, "startDate");
+
     itemObj.globalArr = []
-
     itemObj.listallEvents(itemObj.myArr)
-    
 
-  itemObj.globalArr = [];
+    itemObj.globalArr = [];
+    itemObj.listallEvents(itemObj.myArr);
 
-  itemObj.listallEvents(itemObj.myArr);
-  console.log(itemObj.globalArr[0]);
-
-  localStorage.removeItem("kevinsarray");
-  localStorage.setItem("kevinsarray", JSON.stringify(itemObj.globalArr));
-  //itemObj.listFilteredEvents(array, filterCategory.value, startDate.value, endDate.value)
+    localStorage.removeItem("kevinsarray");
+    localStorage.setItem("kevinsarray", JSON.stringify(itemObj.globalArr));
+    itemObj.listFilteredEvents(array, itemObj.filterCategory.value, startDate.value, endDate.value)
 });
