@@ -48,22 +48,6 @@ class itemLister{
         }       
     }
 
-    listFilteredEvents(events, filterCategory, startDate, endDate){
-        let eventListGrid = document.getElementById("event-list-grid") 
-        eventListGrid.innerHTML=""
-    
-        if(filterCategory != "All"){  
-            for(let current of events){
-                if(current.category == filterCategory && startDate <= current.startDate && endDate >= current.startDate ){
-                    this.listElements(current.startDate,current.category)
-                }
-            }
-        }
-        else{
-            this.listallEvents(this.myArr)
-        }
-    
-    }
     printEventDetails() {
 
         for(let i = 0; i < this.eventListItems.length; i++) {
@@ -160,6 +144,47 @@ class itemLister{
             eventListName[i].firstChild.classList.remove("hidden");
         }
     }
+
+    listFilteredEvents(events, filterCategory, startDate, endDate){
+        let eventListGrid = document.getElementById("event-list-grid") 
+        eventListGrid.innerHTML=""
+    
+        if(filterCategory != "All"){  
+            for(let current of events){
+                if(current.category == filterCategory  ){
+                    this.listElements(current.startDate,current.category)
+                    
+                    console.log("hej")
+                }
+            }
+        }
+        else{
+            this.listallEvents(this.myArr)
+        }
+    
+    }
+    listElements(startDate,category){
+        let eventListItem = document.createElement("div");
+        let eventListDate = document.createElement("div");
+        let eventListDateP = document.createElement("p");
+        let eventListName = document.createElement("div");
+        let eventListNameH4 = document.createElement("h4");
+        let eventListNameP = document.createElement("p");
+                
+        eventListItem.setAttribute("class", "event-list-item");
+        eventListDate.setAttribute("class", "event-list-date");
+        eventListName.setAttribute("class", "event-list-name");
+                
+        this.eventListGrid.appendChild(eventListItem);
+        eventListItem.appendChild(eventListDate);
+        eventListDate.appendChild(eventListDateP);
+        eventListItem.appendChild(eventListName);
+        eventListName.appendChild(eventListNameH4);
+        eventListName.appendChild(eventListNameP);
+            
+        eventListDateP.innerHTML= startDate;
+        eventListNameH4.innerHTML = category;
+    }; 
     
     listEvents(events){
         this.eventListGrid.innerHTML="";
@@ -191,7 +216,7 @@ class itemLister{
     }
   
 
-  filterElements(startDate, category) {
+    filterElements(startDate, category) {
     let eventListItem = document.createElement("div");
     let eventListDate = document.createElement("div");
     let eventListDateP = document.createElement("p");
@@ -216,9 +241,9 @@ class itemLister{
     eventListItem.addEventListener("click", (e) => {
         
     });
-  }
-
-  listallEvents(events) {
+    }
+  
+    listallEvents(events) {
     this.eventListGrid.innerHTML = "";
     if (
       this.filterCategory.value == "All" &&
@@ -228,13 +253,15 @@ class itemLister{
         if (current.startDate >= this.filterStartDate.value) {
           this.filterElements(current.startDate, current.category);
 
-          this.globalArr.push(current);
+          this.globalArr.push(current); 
+          
         }
       }
     } else if (
       this.filterCategory.value == "All" &&
       this.filterStartDate.value <= this.filterEndDate.value
     ) {
+
       for (let current of events) {
         if (
           current.startDate >= this.filterStartDate.value &&
@@ -245,19 +272,20 @@ class itemLister{
         }
       }
     } else if (
-      this.filterCategory.value == "conference" &&
-      this.filterStartDate.value >= this.filterEndDate.value
-    ) {
-      for (let current of events) {
-        if (current.category == "conference" && current.startDate >= this.filterStartDate.value) {
-          this.filterElements(current.startDate, current.category);
-          this.globalArr.push(current);
-        }
+        this.filterCategory.value == "conference" && this.filterStartDate.value >= this.filterEndDate.value){
+            for (let current of events) {
+                if (current.category == "conference" && current.startDate >= this.filterStartDate.value) {
+                    console.log(current.category)
+                    this.filterElements(current.startDate, current.category);
+                }
       }
     } else if (
       this.filterCategory.value == "conference" &&
       this.filterStartDate.value <= this.filterEndDate.value
+      
+      
     ) {
+        
       for (let current of events) {
         if (
           current.category == "conference" &&
@@ -266,11 +294,13 @@ class itemLister{
         ) {
           this.filterElements(current.startDate, current.category);
           this.globalArr.push(current);
+
         }
       }
     } else if (
       this.filterCategory.value == "breakfast" &&
       this.filterStartDate.value >= this.filterEndDate.value
+      
     ) {
       for (let current of events) {
         if (current.category == "breakfast" && current.startDate >= this.filterStartDate.value) {
@@ -317,9 +347,9 @@ class itemLister{
         }
       }
     }
-  }
-  
-  sortArrayBy(array, sort) {
+    }
+    
+    sortArrayBy(array, sort) {
     array.sort(function (a, b) {
       if (a[sort] < b[sort]) return 1;
       if (a[sort] < b[sort]) return -1;
@@ -328,8 +358,8 @@ class itemLister{
     //if (desc) array.reverse();
 
     return array.reverse();
-  }
-}
+    }
+}   
 
 let itemObj = new itemLister();
 
@@ -340,9 +370,6 @@ document.getElementById("filter-button").addEventListener("click", function(e){
 
     itemObj.globalArr = []
     itemObj.listallEvents(itemObj.myArr)
-
-    itemObj.globalArr = [];
-    itemObj.listallEvents(itemObj.myArr);
 
     localStorage.removeItem("kevinsarray");
     localStorage.setItem("kevinsarray", JSON.stringify(itemObj.globalArr));
