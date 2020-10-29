@@ -13,7 +13,7 @@ class itemLister{
         this.filterStartDate.value = ""
         this.filterEndDate.value=""
         this.listEvents(this.myArr)
-        this.globalArr; 
+        this.globalArr = []
 
     }
     
@@ -75,6 +75,8 @@ class itemLister{
             for(let current of events){
                 if(current.startDate>=this.filterStartDate.value){
                     this.filterElements(current.startDate,current.category)
+
+                    this.globalArr.push(current)
                 }
             }
         }
@@ -82,6 +84,8 @@ class itemLister{
             for(let current of events){
                 if(current.startDate>=this.filterStartDate.value && current.startDate<=this.filterEndDate.value){
                     this.filterElements(current.startDate,current.category)
+                    this.globalArr.push(current)
+
                 }
             }
         }
@@ -90,6 +94,8 @@ class itemLister{
             for(let current of events){
                 if(current.category == "conference" && current.startDate>=this.filterStartDate.value){
                     this.filterElements(current.startDate,current.category)
+                    this.globalArr.push(current)
+
                 }
             }
         }
@@ -97,6 +103,8 @@ class itemLister{
             for(let current of events){
                 if(current.category == "conference" && current.startDate>=this.filterStartDate.value && current.startDate<=this.filterEndDate.value){
                     this.filterElements(current.startDate,current.category)
+                    this.globalArr.push(current)
+
                 }
             }
         }
@@ -104,6 +112,8 @@ class itemLister{
             for(let current of events){
                 if(current.category == "breakfast" && current.startDate>=this.filterStartDate.value){
                     this.filterElements(current.startDate,current.category)
+                    this.globalArr.push(current)
+
                 }
             }
         }
@@ -111,6 +121,8 @@ class itemLister{
             for(let current of events){
                 if(current.category == "breakfast" && current.startDate>=this.filterStartDate.value && current.startDate<=this.filterEndDate.value){
                     this.filterElements(current.startDate,current.category)
+                    this.globalArr.push(current)
+
                 }
             }
         }
@@ -119,6 +131,8 @@ class itemLister{
             for(let current of events){
                 if(current.category == "lunch" && current.startDate>=this.filterStartDate.value){
                     this.filterElements(current.startDate,current.category)
+                    this.globalArr.push(current)
+
                 }
             }
         }
@@ -126,6 +140,8 @@ class itemLister{
             for(let current of events){
                 if(current.category == "lunch" && current.startDate>=this.filterStartDate.value && current.startDate<=this.filterEndDate.value){
                     this.filterElements(current.startDate,current.category)
+                    this.globalArr.push(current)
+
                 }
             }
         }
@@ -147,9 +163,12 @@ let itemObj = new itemLister()
 
 let click = document.getElementById("filter-button").addEventListener("click", function(e){
     let array = itemObj.sortArrayBy(itemObj.myArr, "startDate");
-    itemObj.globalArr = array
-    console.log(itemObj.globalArr)
+    
+    itemObj.globalArr = []
+
     itemObj.listallEvents(itemObj.myArr)
+    console.log(itemObj.globalArr[0])
     //itemObj.listFilteredEvents(array, filterCategory.value, startDate.value, endDate.value)
 })
+
 
