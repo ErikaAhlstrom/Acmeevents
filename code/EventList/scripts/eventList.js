@@ -161,6 +161,7 @@ class itemLister{
 let itemObj = new itemLister()
 
 
+
 let click = document.getElementById("filter-button").addEventListener("click", function(e){
     let array = itemObj.sortArrayBy(itemObj.myArr, "startDate");
     
@@ -168,6 +169,9 @@ let click = document.getElementById("filter-button").addEventListener("click", f
 
     itemObj.listallEvents(itemObj.myArr)
     console.log(itemObj.globalArr[0])
+
+    localStorage.removeItem("kevinsarray")
+    localStorage.setItem("kevinsarray", JSON.stringify(itemObj.globalArr))
     //itemObj.listFilteredEvents(array, filterCategory.value, startDate.value, endDate.value)
 })
 
