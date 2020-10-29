@@ -166,7 +166,7 @@ class Admin {
     }
   }
 
-  leaveEditEventPage(dom, index, list) {
+  leaveEditEventPage(dom, index) {
     for (let i = 1; i < dom.eventArrayEdit.length; i++) {
       dom.eventArrayEdit[i].value = "";
     }
