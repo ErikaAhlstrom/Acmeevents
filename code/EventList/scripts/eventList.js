@@ -1,6 +1,5 @@
 //console.log(new Date().toISOString().substring(0, 10))
 
-<<<<<<< HEAD
 class itemLister{
     constructor(){
         this.myArr = JSON.parse(localStorage.getItem("storageArray"))
@@ -26,15 +25,19 @@ class itemLister{
     updateGlobalArr() {
         let sortBtn = document.getElementById("filter-button");
         sortBtn.addEventListener("click", (e) => {
-            this.eventListItems = Array.from(document.getElementsByClassName("event-list-item")); 
-            console.log(this.globalArr);
+            //this.eventListItems = Array.from(document.getElementsByClassName("event-list-item")); 
+            this.trackOpenCards();   
+
         });
     }
 
 
     //Erikas Metoder
     trackOpenCards() {
+        this.eventListItems = Array.from(document.getElementsByClassName("event-list-item")); 
+
         for (let i = 0; i < this.eventListItems.length; i++) {
+
             this.eventListItems[i].addEventListener("click", (e) => {
                 if (this.eventListItems[i].classList.contains("open")) {
                     this.removeEventListDetails(i);
@@ -132,7 +135,8 @@ class itemLister{
             mainContainer.appendChild(rightColumn);
 
             this.eventListItems[i].childNodes[1].appendChild(mainContainer);
-            }           
+            }
+                       
         } 
     }
 
@@ -145,7 +149,7 @@ class itemLister{
     }
     
     listEvents(events){
-        this.eventListGrid.innerHTML=""
+        this.eventListGrid.innerHTML="";
 
         for(let current of events){
             let eventListItem = document.createElement("div");
@@ -169,49 +173,10 @@ class itemLister{
             eventListDateP.innerHTML= current.startDate;
             eventListNameH4.innerHTML = current.category;
         }
+        
 
-=======
-class itemLister {
-  constructor() {
-    this.myArr = JSON.parse(localStorage.getItem("storageArray"));
-    this.eventListGrid = document.getElementById("event-list-grid");
-    this.filterCategory = document.getElementById("category");
-    this.filterEndDate = document.getElementById("endDate");
-    this.filterCategory.value = "All";
-    this.filterStartDate = document.getElementById("startDate");
-    this.filterStartDate.value = "";
-    this.filterEndDate.value = "";
-    this.listEvents(this.myArr);
-    this.globalArr = [];
-  }
-
-  listEvents(events) {
-    this.eventListGrid.innerHTML = "";
-
-    for (let current of events) {
-      let eventListItem = document.createElement("div");
-      let eventListDate = document.createElement("div");
-      let eventListDateP = document.createElement("p");
-      let eventListName = document.createElement("div");
-      let eventListNameH4 = document.createElement("h4");
-      let eventListNameP = document.createElement("p");
-
-      eventListItem.setAttribute("class", "event-list-item");
-      eventListDate.setAttribute("class", "event-list-date");
-      eventListName.setAttribute("class", "event-list-name");
-
-      this.eventListGrid.appendChild(eventListItem);
-      eventListItem.appendChild(eventListDate);
-      eventListDate.appendChild(eventListDateP);
-      eventListItem.appendChild(eventListName);
-      eventListName.appendChild(eventListNameH4);
-      eventListName.appendChild(eventListNameP);
-
-      eventListDateP.innerHTML = current.startDate;
-      eventListNameH4.innerHTML = current.category;
->>>>>>> 5fe3c0073298bec0105e74ddbc28eed76404225e
     }
-  }
+  
 
   filterElements(startDate, category) {
     let eventListItem = document.createElement("div");
@@ -234,6 +199,10 @@ class itemLister {
 
     eventListDateP.innerHTML = startDate;
     eventListNameH4.innerHTML = category;
+
+    eventListItem.addEventListener("click", (e) => {
+        
+    });
   }
 
   listallEvents(events) {
@@ -336,7 +305,10 @@ class itemLister {
         }
       }
     }
+    console.log(this.globalArr.length);
+
   }
+  
 
   sortArrayBy(array, sort, desc) {
     array.sort(function (a, b) {
@@ -349,8 +321,8 @@ class itemLister {
     return array.reverse();
   }
 }
-<<<<<<< HEAD
-let itemObj = new itemLister()
+
+let itemObj = new itemLister();
 
 
 //let click = 
@@ -359,13 +331,7 @@ document.getElementById("filter-button").addEventListener("click", function(e){
     itemObj.globalArr = []
 
     itemObj.listallEvents(itemObj.myArr)
-    //console.log(itemObj.globalArr[0])
-=======
-let itemObj = new itemLister();
-
-let click = document.getElementById("filter-button").addEventListener("click", function (e) {
-  let array = itemObj.sortArrayBy(itemObj.myArr, "startDate");
->>>>>>> 5fe3c0073298bec0105e74ddbc28eed76404225e
+    
 
   itemObj.globalArr = [];
 
