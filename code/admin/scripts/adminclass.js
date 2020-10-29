@@ -48,6 +48,7 @@ class Admin {
           let storedItemValues = Object.values(localStorageHandler.getStoredArray()[i]);
 
           dom.editSaveButton.classList.add(`edit-save-button${i}`);
+          dom.editCancelButton.classList.add(`edit-cancel-button${i}`);
           dom.eventArrayEdit[0].checked = storedItemValues[0];
           for (let j = 1; j < storedItemValues.length; j++) {
             dom.eventArrayEdit[j].value = storedItemValues[j];
@@ -98,8 +99,8 @@ class Admin {
           dom.eventListPage.classList.remove("hidden");
           list.removeChildren();
           list.listOutput();
-        } else if (e.target === dom.editCancelButton) {
-          leaveEditEventPage(dom, list, i);
+        } else if (e.target === document.getElementsByClassName(`edit-cancel-button${i}`)[0]) {
+          leaveEditEventPage(dom, i, list);
         }
       }
     });
@@ -163,14 +164,16 @@ class Admin {
     }
   }
 
-  leaveEditEventPage(dom, list, i) {
+  leaveEditEventPage(dom, index, list) {
     for (let i = 1; i < dom.eventArrayEdit.length; i++) {
-      dom.eventArrayEdit[i] = "";
+      dom.eventArrayEdit[i].value = "";
     }
     dom.eventArrayEdit[0].checked = false;
     dom.editEventPage.classList.add("hidden");
     dom.eventListPage.classList.remove("hidden");
-    let saveButton = document.getElementsByClassName(`edit-save-button${i}`)[0];
-    saveButton.classList.remove(`edit-save-button${i}`);
+    let saveButton = document.getElementsByClassName(`edit-save-button${index}`)[0];
+    saveButton.classList.remove(`edit-save-button${index}`);
+    let cancelButton = document.getElementsByClassName(`edit-cancel-button${index}`)[0];
+    cancelButton.classList.remove(`edit-cancel-button${index}`);
   }
 }
