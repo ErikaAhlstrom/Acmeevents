@@ -44,7 +44,6 @@ class ListItem {
     this.eventTable.appendChild(this.aNewRow);
 
     this.deleteItem(this.deleteButton, this.index, this.localStorageHandler, this.list);
-    this.editItem(this.dom, this.editButton, this.storedItem);
   }
 
   deleteItem(deleteButton, index, localStorageHandler, list) {
@@ -52,33 +51,11 @@ class ListItem {
       if (confirm("Are you sure that you want to delete this event?")) {
         let storageArray = localStorageHandler.getStoredArray();
         localStorageHandler.removeStoredArray();
-        let children = document.querySelectorAll(".child");
-        list.removeChildren(children);
+        list.removeChildren();
         storageArray.splice(index, 1);
         localStorageHandler.storeArray(storageArray);
         list.listOutput(localStorageHandler);
       }
-    });
-  }
-  editItem(dom, editButton, storedItem) {
-    editButton.addEventListener("click", function () {
-      dom.eventListPage.classList.add("hidden");
-      dom.editEventPage.classList.remove("hidden");
-
-      let editInputsArray = dom.eventArrayEdit;
-
-      editInputsArray[0] = storedItem.frontPage;
-      editInputsArray[1].value = storedItem.category;
-      editInputsArray[2].value = storedItem.companyName;
-      editInputsArray[3].value = storedItem.startTime;
-      editInputsArray[4].value = storedItem.endTime;
-      editInputsArray[5].value = storedItem.startDate;
-      editInputsArray[6].value = storedItem.endDate;
-      editInputsArray[7].value = storedItem.location;
-      editInputsArray[8].value = storedItem.participants;
-      editInputsArray[9].value = storedItem.admin;
-      editInputsArray[10].value = storedItem.eventManager;
-      editInputsArray[11].value = storedItem.infoText;
     });
   }
 }
