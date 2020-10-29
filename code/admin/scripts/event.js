@@ -1,7 +1,7 @@
 class Event {
   constructor(
     frontPage = "unknown",
-    category,
+    category = "unknown",
     companyName = "unknown",
     startTime = "unknown",
     endTime = "unknown",

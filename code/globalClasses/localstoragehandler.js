@@ -12,4 +12,12 @@ class LocalStorageHandler {
   storeArray(storageArray) {
     localStorage.setItem("storageArray", JSON.stringify(storageArray));
   }
+  storeKevinArray(kevinArray) {
+    localStorage.setItem("kevinArray", JSON.stringify(kevinArray));
+  }
+  getStoredKevinArray() {
+    let storageArray = JSON.parse(localStorage.getItem("kevinArray"));
+    localStorage.removeItem("kevinArray");
+    return storageArray;
+  }
 }
