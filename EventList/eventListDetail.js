@@ -105,7 +105,6 @@ class EventListDetails {
             mainContainer.appendChild(rightColumn);
 
             this.eventListItems[i].childNodes[1].appendChild(mainContainer);
-            
             }           
         } 
     }

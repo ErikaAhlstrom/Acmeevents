@@ -168,13 +168,15 @@
 .card-picture {
   background-position: center;
   background-size: 100%;
-  transition: 0.5s;
+  transition: all 0.6s ease 0.5s;
+  -webkit-transition: all 0.6s ease;
 }
 .card-picture:hover {
   background-image: url("/bilder/New/Card1.jpg");
   background-size: 140%;
   background-position: center;
-  transition: 0.5s;
+  transition: all 0.6s ease 0.5s;
+  -webkit-transition: all 0.6s ease;
 }
 
 .card {
