@@ -75,7 +75,9 @@ class Admin {
       for (let i = 0; i < localStorageHandler.getStoredArray().length; i++) {
         if (e.target === document.getElementsByClassName(`edit-save-button${i}`)[0]) {
           let saveButton = document.getElementsByClassName(`edit-save-button${i}`)[0];
+          let cancelButton = document.getElementsByClassName(`edit-cancel-button${i}`)[0];
           saveButton.classList.remove(`edit-save-button${i}`);
+          cancelButton.classList.remove(`edit-cancel-button${i}`);
           let storageArray = localStorageHandler.getStoredArray();
           localStorageHandler.removeStoredArray();
           let storedItem = storageArray[i];
