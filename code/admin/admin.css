@@ -21,7 +21,7 @@ nav {
   justify-content: space-between;
 }
 
-#admin-nav-bar{
+#admin-nav-bar {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -206,10 +206,11 @@ tr :nth-child(6) {
 
 /*========================================================Even list card end============================================================*/
 /*========================================================Add event card================================================================*/
-#add-event-page, 
+#add-event-page,
 #edit-event {
   grid-column: 2;
   grid-row: 1/21;
+  padding: 5px;
   margin: 6%;
   background: #ffffff;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.5);
@@ -219,11 +220,10 @@ tr :nth-child(6) {
 }
 
 #add-event-page > h4 {
- 
- grid-template-columns: 17% 31% 21% 31%;
- grid-template-rows: 17% 8% 8% 8% 8% 8% 26% 17%;
+  grid-template-columns: 17% 31% 21% 31%;
+  grid-template-rows: 17% 8% 8% 8% 8% 8% 26% 17%;
 }
-#add-event > h4, 
+#add-event > h4,
 #edit-event > h4 {
   grid-column: 1;
   grid-row: 1;
@@ -284,11 +284,11 @@ tr :nth-child(6) {
   grid-area: 4/4;
 }
 #location-label,
-#edit-location-label{
+#edit-location-label {
   grid-area: 5/1;
 }
 #location,
-#edit-location{
+#edit-location {
   grid-area: 5/2;
 }
 #participants-label,
@@ -300,22 +300,22 @@ tr :nth-child(6) {
   grid-area: 5/4;
 }
 #administrator-label,
-#edit-administrator-label{
+#edit-administrator-label {
   grid-area: 6/1;
 }
 
 #administrator,
-#edit-administrator{
+#edit-administrator {
   grid-area: 6/2;
 }
 
 #eventmanager-label,
-#edit-eventmanager-label{
+#edit-eventmanager-label {
   grid-area: 6/3;
 }
 
 #eventmanager,
-#edit-eventmanager{
+#edit-eventmanager {
   grid-area: 6/4;
 }
 
@@ -342,9 +342,9 @@ tr :nth-child(6) {
   padding: 40px 80px 40px 40px;
 }
 
-#add-event-page input, 
+#add-event-page input,
 #add-event-page select,
-#edit-event input, 
+#edit-event input,
 #edit-event select {
   height: 35px;
   align-self: center;
@@ -384,7 +384,7 @@ tr :nth-child(6) {
 #edit-location-label,
 #edit-participants-label,
 #edit-administrator-label,
-#edit-eventmanager-label{
+#edit-eventmanager-label {
   height: 40px;
   align-self: center;
   padding: 7%;
@@ -402,7 +402,6 @@ tr :nth-child(6) {
 
 #add-event-page h3,
 #edit-event h3 {
-
   align-self: center;
   margin-left: 5%;
 }
