@@ -299,6 +299,27 @@ select {
   background-color: rgb(255, 255, 255);
   margin: 20px 0px 10px 0px;
 
+
+}
+
+.lunch-img {
+  background-image: url(/bilder/New/Card4.jpg);
+  background-size: cover;
+}
+
+.conf-img {
+  background-image: url(/bilder/New/Card6.jpg);
+  background-size: cover;
+}
+
+.break-img {
+  background-image: url(/bilder/New/Card2.jpg);
+  background-size: cover;
+}
+
+.meet-img {
+  background-image: url(/bilder/New/Card3.jpg);
+  background-size: cover;
 }
 
 .detail-guest-header {

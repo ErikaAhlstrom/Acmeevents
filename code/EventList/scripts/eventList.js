@@ -111,6 +111,17 @@ class itemLister{
             guestBookHeader.classList.add("detail-guest-header");
             guestBookText.classList.add("detail-guest-text");
 
+            //Sätt rätt bild
+            if (this.globalArr[i].category == "lunch") {
+                imgDiv.classList.add("lunch-img");
+            } else if (this.globalArr[i].category == "conference") {
+                imgDiv.classList.add("conf-img");
+            } else if (this.globalArr[i].category == "breakfast") {
+                imgDiv.classList.add("break-img");
+            } else {
+                imgDiv.classList.add("meet-img");
+            }
+
             //Append Element
             paragrphs.appendChild(startsP);
             paragrphs.appendChild(endsP);
@@ -201,7 +212,7 @@ class itemLister{
     eventListNameH4.innerHTML = category;
 
     eventListItem.addEventListener("click", (e) => {
-        
+
     });
   }
 
