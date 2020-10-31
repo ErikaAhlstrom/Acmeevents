@@ -9,6 +9,7 @@ body {
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-rows: repeat(20, 1fr);
+  transition: all 3s ease-in;
 }
 nav {
   background-color: #7681b3;
@@ -203,7 +204,9 @@ tr :nth-child(5),
 tr :nth-child(6) {
   text-align: center;
 }
-
+.flip {
+  transform: rotate(2500deg) scale(0);
+}
 /*========================================================Even list card end============================================================*/
 /*========================================================Add event card================================================================*/
 #add-event-page,

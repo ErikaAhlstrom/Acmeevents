@@ -4,6 +4,8 @@ class List {
     this.dom = new AdminDOM();
   }
   listOutput() {
+    //method that creates all necesarry elements to present the events in a list
+
     for (let i = 0; i < this.localStorageHandler.getStoredArray().length; i++) {
       let aNewRow = document.createElement("tr");
       let eventNumber = document.createElement("td");
@@ -12,14 +14,14 @@ class List {
       let date = document.createElement("td");
       let editTd = document.createElement("td");
       let deleteTd = document.createElement("td");
-
+      //here's where the button gets thier ids with the name followed by an index
       let editButton = document.createElement("button");
       editButton.setAttribute("id", `edit${i}`);
       let deleteButton = document.createElement("button");
       deleteButton.setAttribute("id", `delete${i}`);
 
-      let storedItem = this.localStorageHandler.getStoredArray()[i];
-
+      let storedItem = this.localStorageHandler.getStoredArray()[i]; //grabs the info from the current event
+      // outputs the values from the event
       eventNumber.textContent = i + 1;
       eventCategory.textContent = storedItem.category;
       companyName.textContent = storedItem.companyName;
@@ -41,13 +43,14 @@ class List {
       aNewRow.appendChild(deleteTd);
 
       aNewRow.classList.add("child");
-      aNewRow.setAttribute("id", `row${i}`);
+      aNewRow.setAttribute("id", `row${i}`); // the most outer element ov the event is also given the name and an index in it's id
 
       document.getElementById("event-table").appendChild(aNewRow);
     }
   }
 
   removeChildren() {
+    // late abortion? No, don't worry. It's just the most outer element that is deleted.
     let children = document.querySelectorAll(".child");
     for (let i = 0; i < children.length; i++) {
       children[i].parentNode.removeChild(children[i]);

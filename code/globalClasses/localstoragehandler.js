@@ -1,5 +1,5 @@
 //the methods in this class is needed on multiple places of the code.
-//they are basically taking, removing and sending stuff from tne local storage
+//they are basically taking, removing and sending stuff from and to the local storage
 
 class LocalStorageHandler {
   getStoredArray() {

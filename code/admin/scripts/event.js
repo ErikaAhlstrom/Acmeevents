@@ -1,3 +1,5 @@
+//A class without methods, it just holds the attributes that the events need
+
 class Event {
   constructor(
     frontPage = "unknown",
