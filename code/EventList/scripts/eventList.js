@@ -151,14 +151,14 @@ class itemLister {
     }
   }
 
-  listFilteredEvents(events, filterCategory, startDate, endDate) {
+  listFilteredEvents(events, filterCategory) {
     let eventListGrid = document.getElementById("event-list-grid");
     eventListGrid.innerHTML = "";
 
     if (filterCategory != "All") {
       for (let current of events) {
         if (current.category == filterCategory) {
-          this.listElements(current.startDate, current.category, current.companyName);
+          this.filterElements(current.startDate, current.category, current.companyName);
 
           console.log("hej");
         }
@@ -166,28 +166,6 @@ class itemLister {
     } else {
       this.listallEvents(this.myArr);
     }
-  }
-  listElements(startDate, category, companyName) {
-    let eventListItem = document.createElement("div");
-    let eventListDate = document.createElement("div");
-    let eventListDateP = document.createElement("p");
-    let eventListName = document.createElement("div");
-    let eventListNameH4 = document.createElement("h4");
-    let eventListNameP = document.createElement("p");
-
-    eventListItem.setAttribute("class", "event-list-item");
-    eventListDate.setAttribute("class", "event-list-date");
-    eventListName.setAttribute("class", "event-list-name");
-
-    this.eventListGrid.appendChild(eventListItem);
-    eventListItem.appendChild(eventListDate);
-    eventListDate.appendChild(eventListDateP);
-    eventListItem.appendChild(eventListName);
-    eventListName.appendChild(eventListNameH4);
-    eventListName.appendChild(eventListNameP);
-
-    eventListDateP.innerHTML = startDate;
-    eventListNameH4.innerHTML = category + ", " + companyName;
   }
 
   listEvents(events) {
@@ -238,8 +216,6 @@ class itemLister {
 
     eventListDateP.innerHTML = startDate;
     eventListNameH4.innerHTML = category + ", " + companyName;
-
-    eventListItem.addEventListener("click", (e) => {});
   }
   //test kommentar
   listallEvents(events) {
@@ -345,26 +321,27 @@ class itemLister {
 
   sortArrayBy(array, sort) {
     array.sort(function (a, b) {
-      if (a[sort] < b[sort]) return 1;
       if (a[sort] < b[sort]) return -1;
+      if (a[sort] > b[sort]) return 1;
       return 0;
     });
-    //if (desc) array.reverse();
-
-    return array.reverse();
   }
 }
 
 let itemObj = new itemLister();
 
-//let click =
 document.getElementById("filter-button").addEventListener("click", function (e) {
-  let array = itemObj.sortArrayBy(itemObj.myArr, "startDate");
+  itemObj.sortArrayBy(itemObj.myArr, "startDate");
 
   itemObj.globalArr = [];
   itemObj.listallEvents(itemObj.myArr);
 
   localStorage.removeItem("kevinsarray");
   localStorage.setItem("kevinsarray", JSON.stringify(itemObj.globalArr));
-  itemObj.listFilteredEvents(array, itemObj.filterCategory.value, startDate.value, endDate.value);
+  itemObj.listFilteredEvents(
+    itemObj.myArr,
+    itemObj.filterCategory.value,
+    startDate.value,
+    endDate.value
+  );
 });
