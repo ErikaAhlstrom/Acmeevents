@@ -9,52 +9,6 @@ html, body {
   margin: 0; 
 }
 
-/* responisv menu
-.nav {
-  background-color: #83c9f4;
-  height: 15vh;
-  text-align: right;
-  line-height: 70px;
-}
-
-.nav-left {
-  float: left;
-}
-
-#logo {
-  position: relative;
-  float: left;
-  width: 70px;
-}
-
-.menu {
-  background: url(/bilder/New/Hero.jpg);
-  height: 15vh;
-  background-size: cover;   
-  background-position-y: -300px;
-  background-repeat: no-repeat;
-}
-
-.menu a {
-  clear: right;
-  text-decoration: none;
-  color: gray;
-  margin: 0 10px;
-  line-height: 70px;
-}
-
-label {
-  margin: 0 40px 0 0;
-  font-size: 26px;
-  line-height: 70px;
-  display: none;
-  width: 26px;
-  float: right;
-}
-#toggle {
-  display: none;
-}
-/* responisv menu*/
 
 /*Gamla koden(orignal)*/
 #banner {
@@ -352,29 +306,6 @@ footer i:nth-child(3) {
 
 
 @media screen and (max-width: 800px) {     
-  label {
-    display: block;
-    cursor: pointer;
-  }
-  .nav-left {
-	  float: none;
-	  display: block;
-  }
-  .menu {
-    text-align: center;
-    width: 100%;
-    display: none;
-  }
-  .menu a {
-    position: relative;
-    background-color: #83c9f4;
-    display: block;
-    margin: 0;
-  }
-  #toggle:checked + .menu {
-    display: block;
-  }
-
   .row{   
     flex-direction: column;
   }
@@ -414,7 +345,7 @@ footer i:nth-child(3) {
   .column-4{
     width:25%;
   }
-#adress-section{
+  #adress-section{
     width: 100%;
   }
   .column{
