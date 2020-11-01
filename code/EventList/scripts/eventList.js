@@ -1,5 +1,3 @@
-//console.log(new Date().toISOString().substring(0, 10))
-
 class itemLister {
   constructor() {
     this.myArr = JSON.parse(localStorage.getItem("storageArray"));
@@ -13,6 +11,7 @@ class itemLister {
     this.listEvents(this.myArr);
     this.globalArr = this.myArr;
     this.updateGlobalArr();
+    this.buttonEventListener(); 
 
     //Erikas Klass
     this.eventListItems = Array.from(document.getElementsByClassName("event-list-item"));
@@ -151,6 +150,7 @@ class itemLister {
     }
   }
 
+  //Listar upp de filtrerade elementen 
   listFilteredEvents(events, filterCategory) {
     let eventListGrid = document.getElementById("event-list-grid");
     eventListGrid.innerHTML = "";
@@ -159,8 +159,6 @@ class itemLister {
       for (let current of events) {
         if (current.category == filterCategory) {
           this.filterElements(current.startDate, current.category, current.companyName);
-
-          console.log("hej");
         }
       }
     } else {
@@ -168,9 +166,10 @@ class itemLister {
     }
   }
 
+  //Listar alla element när sidan laddas
   listEvents(events) {
     this.eventListGrid.innerHTML = "";
-
+    
     for (let current of events) {
       let eventListItem = document.createElement("div");
       let eventListDate = document.createElement("div");
@@ -195,6 +194,7 @@ class itemLister {
     }
   }
 
+  //Listar alla element när man trycker på sort
   filterElements(startDate, category, companyName) {
     let eventListItem = document.createElement("div");
     let eventListDate = document.createElement("div");
@@ -217,7 +217,8 @@ class itemLister {
     eventListDateP.innerHTML = startDate;
     eventListNameH4.innerHTML = category + ", " + companyName;
   }
-  //test kommentar
+
+  //Filtrerar elementen
   listallEvents(events) {
     this.eventListGrid.innerHTML = "";
     if (
@@ -319,6 +320,7 @@ class itemLister {
     }
   }
 
+  //Sorterar elementen 
   sortArrayBy(array, sort) {
     array.sort(function (a, b) {
       if (a[sort] < b[sort]) return -1;
@@ -326,22 +328,27 @@ class itemLister {
       return 0;
     });
   }
+  
+  //eventlyssnare till sortknappen
+  buttonEventListener(){
+    document.getElementById("filter-button").addEventListener("click", function (e) {
+      itemObj.sortArrayBy(itemObj.myArr, "startDate");
+    
+      itemObj.globalArr = [];
+      itemObj.listallEvents(itemObj.myArr);
+      
+      //Uppdaterar local storage
+      localStorage.removeItem("kevinsarray");
+      localStorage.setItem("kevinsarray", JSON.stringify(itemObj.globalArr));
+      itemObj.listFilteredEvents(
+        itemObj.myArr,
+        itemObj.filterCategory.value,
+        startDate.value,
+        endDate.value
+      );
+    });
+  }
 }
 
 let itemObj = new itemLister();
 
-document.getElementById("filter-button").addEventListener("click", function (e) {
-  itemObj.sortArrayBy(itemObj.myArr, "startDate");
-
-  itemObj.globalArr = [];
-  itemObj.listallEvents(itemObj.myArr);
-
-  localStorage.removeItem("kevinsarray");
-  localStorage.setItem("kevinsarray", JSON.stringify(itemObj.globalArr));
-  itemObj.listFilteredEvents(
-    itemObj.myArr,
-    itemObj.filterCategory.value,
-    startDate.value,
-    endDate.value
-  );
-});
