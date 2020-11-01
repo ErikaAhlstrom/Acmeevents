@@ -43,14 +43,14 @@ class List {
       aNewRow.appendChild(deleteTd);
 
       aNewRow.classList.add("child");
-      aNewRow.setAttribute("id", `row${i}`); // the most outer element ov the event is also given the name and an index in it's id
+      aNewRow.setAttribute("id", `row${i}`); // the most outer element of the event is also given the name and an index in it's id
 
       document.getElementById("event-table").appendChild(aNewRow);
     }
   }
 
   removeChildren() {
-    // late abortion? No, don't worry. It's just the most outer element that is deleted.
+    // All elements with the class child is deleted
     let children = document.querySelectorAll(".child");
     for (let i = 0; i < children.length; i++) {
       children[i].parentNode.removeChild(children[i]);
