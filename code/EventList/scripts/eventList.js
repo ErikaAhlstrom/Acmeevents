@@ -14,7 +14,6 @@ class itemLister {
     this.globalArr = this.myArr;
     this.updateGlobalArr();
 
-    //Erikas Klass
     this.eventListItems = Array.from(document.getElementsByClassName("event-list-item"));
     this.eventListItemsOpen;
     this.trackOpenCards();
@@ -23,12 +22,11 @@ class itemLister {
   updateGlobalArr() {
     let sortBtn = document.getElementById("filter-button");
     sortBtn.addEventListener("click", (e) => {
-      //this.eventListItems = Array.from(document.getElementsByClassName("event-list-item"));
       this.trackOpenCards();
     });
   }
 
-  //Erikas Metoder
+  //Håller koll på vilket kort som klickats
   trackOpenCards() {
     this.eventListItems = Array.from(document.getElementsByClassName("event-list-item"));
     for (let i = 0; i < this.eventListItems.length; i++) {
@@ -52,8 +50,6 @@ class itemLister {
         eventListName[i].firstChild.classList.add("hidden");
 
         //Skapa Element
-        //let localStorageEvents = new LocalStorageHandler();
-        //let eventsArray = localStorageEvents.getStoredArray();
         let categoryCompanyHeader = document.createElement("H3");
         let aboutHeader = document.createElement("H4");
         let aboutP = document.createElement("P");
