@@ -241,7 +241,7 @@ class itemLister {
 
     eventListItem.addEventListener("click", (e) => {});
   }
-
+  //test kommentar
   listallEvents(events) {
     this.eventListGrid.innerHTML = "";
     if (
