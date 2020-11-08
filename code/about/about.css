@@ -12,7 +12,7 @@ html, body {
 
 /*Gamla koden(orignal)*/
 #banner {
-  background: url(/bilder/New/Hero.jpg) fixed;
+  background: url(/Acmeevents/bilder/New/Hero.jpg) fixed;
   background-size: cover;
   height: 15vh;
   background-position-y: -300px;
@@ -167,26 +167,26 @@ html, body {
 }
 
 #team-section :nth-child(3) img{
-  background-image: url(/bilder/New/antonio.jpg);
+  background-image: url(/Acmeevents/bilder/New/antonio.jpg);
   background-size: 100%;
   filter: grayscale(100%);
 }
 
 #team-section :nth-child(4) img{
-  background-image: url(/bilder/New/mathilde.jpg);
+  background-image: url(/Acmeevents/bilder/New/mathilde.jpg);
   background-size: 200%;
   background-position-x: -80px ;
   filter: grayscale(100%);
 }
 
 #team-section :nth-child(5) img{
-  background-image: url(/bilder/New/Georgios.jpg);
+  background-image: url(/Acmeevents/bilder/New/Georgios.jpg);
   background-size: 100%;
   filter: grayscale(100%);
 }
 
 #team-section :nth-child(6) img{
-  background-image: url(/bilder/New/seb.jpg);
+  background-image: url(/Acmeevents/bilder/New/seb.jpg);
   background-size: 100%;
   filter: grayscale(100%);
 }

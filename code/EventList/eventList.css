@@ -13,7 +13,7 @@
   }
   
   #banner {
-    background: url(/bilder/New/Hero.jpg) fixed;
+    background: url(/Acmeevents/bilder/New/Hero.jpg) fixed;
     background-size: cover;
     height: 15vh;
     background-position-y: -300px;
@@ -303,22 +303,22 @@ select {
 }
 
 .lunch-img {
-  background-image: url(/bilder/New/Card4.jpg);
+  background-image: url(/Acmeevents/bilder/New/Card4.jpg);
   background-size: cover;
 }
 
 .conf-img {
-  background-image: url(/bilder/New/Card6.jpg);
+  background-image: url(/Acmeevents/bilder/New/Card5.jpg);
   background-size: cover;
 }
 
 .break-img {
-  background-image: url(/bilder/New/Card2.jpg);
+  background-image: url(/Acmeevents/bilder/New/Card2.jpg);
   background-size: cover;
 }
 
 .meet-img {
-  background-image: url(/bilder/New/Card3.jpg);
+  background-image: url(/Acmeevents/bilder/New/Card3.jpg);
   background-size: cover;
 }
 
